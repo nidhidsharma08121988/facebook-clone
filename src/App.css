@@ -270,3 +270,28 @@
   --dataviz-supplementary-3: rgb(49, 162, 76);
   --dataviz-supplementary-4: rgb(50, 52, 54);
 }
+.navbar {
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+li {
+  margin: 0.8rem 0.8rem;
+  font-size: 1.5rem;
+}
+footer {
+  position: absolute;
+  bottom: 0px;
+}
