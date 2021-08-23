@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "userId": "1",
+      "userName": "Nidhi Sharma",
+      "imgSrc": ""
+    },
+    {
+      "userId": "2",
+      "userName": "Pankaj Sharma",
+      "imgSrc": ""
+    },
+    {
+      "userId": "3",
+      "userName": "Priyanka S",
+      "imgSrc": ""
+    }
+  ],
+  "currentUser": {
+    "userId": "1",
+    "userName": "Nidhi Sharma",
+    "friends": ["2", "3"],
+    "posts": [
+      {
+        "userId": "1",
+        "text": "do re mi fa so la te",
+        "imageSrc": "",
+        "videoSrc": "",
+        "comments": [
+          {
+            "userId": "2",
+            "text": "Great"
+          },
+          {
+            "userId": "3",
+            "text": "Wow"
+          }
+        ]
+      }
+    ]
+  }
+}
