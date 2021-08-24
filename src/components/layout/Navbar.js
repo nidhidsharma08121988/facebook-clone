@@ -4,46 +4,69 @@ const Navbar = props => {
   const [search, setSearch] = useState('');
   return (
     <div className='navbar'>
-      <div className='left'>
-        <ul>
-          <li>
-            <i className='fa fa-facebook' data-testid='brand' />
+      <>
+        <ul className='left'>
+          <li
+            className='brand-container-inmenu'
+            style={{
+              backgroundColor: 'steelblue',
+              width: '35px',
+              height: '35px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              borderRadius: '50%',
+            }}
+          >
+            <div>{'  '}</div>
+            <i
+              className='fa fa-facebook brand'
+              data-testid='brand'
+              style={{
+                color: 'white',
+                fontSize: '30px',
+              }}
+            />
           </li>
-          <li>
+          <li className='search-container-inmenu'>
+            <i className='fa fa-search search-icon' style={{ zIndex: 1 }} />
             <input
               onChange={e => setSearch(e.target.value)}
               type='text'
               value={search}
-              placeholder='Search facebook'
+              placeholder='Search Facebook'
               data-testid='search'
+              className='search'
             />
           </li>
         </ul>
-      </div>
-      <div className='center'>
-        <ul>
-          <li>
+      </>
+      <>
+        <ul className='center'>
+          <li className='home-inmenu'>
             <i className='fa fa-home' data-testid='home-icon' />
           </li>
-          <li>
+          <li className='friends-inmenu'>
             <i className='fas fa-user-friends' data-testid='friends-icon' />
           </li>
-          <li>
+          <li className='watch-inmenu'>
             <i className='fas fa-video' data-testid='watch-icon' />
           </li>
-          <li>
+          <li className='market-inmenu'>
             <i className='fas fa-store' data-testid='market-icon' />
           </li>
-          <li>
+          <li className='gaming-inmenu'>
             <i className='fas fa-dice-four' data-testid='gaming-icon'></i>
           </li>
         </ul>
-      </div>
-      <div className='right'>
-        <ul>
+      </>
+      <>
+        <ul className='right'>
           <li>
-            <button data-testid='profile-btn'>
-              <img src='' alt='profile' className='profile-btn' />
+            <button data-testid='profile-btn' className='profile-btn btn'>
+              <img src='' alt='profile' className='profile-btn-img' />
+              Name
             </button>
           </li>
           <li>
@@ -67,7 +90,7 @@ const Navbar = props => {
             </button>
           </li>
         </ul>
-      </div>
+      </>
     </div>
   );
 };

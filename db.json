@@ -2,30 +2,42 @@
   "users": [
     {
       "userId": "1",
-      "userName": "Nidhi Sharma",
-      "imgSrc": ""
+      "userName": {
+        "first": "Nidhi",
+        "last": "Sharma"
+      },
+      "imgSrc": "https://scontent-ber1-1.xx.fbcdn.net/v/t1.6435-1/p160x160/203926692_125288536403754_2200656141765511149_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=7206a8&_nc_ohc=uLjfiB1CbzcAX_ryHHf&_nc_ht=scontent-ber1-1.xx&oh=3de4439111ae505f84c2d21be867694f&oe=61490E64"
     },
     {
       "userId": "2",
-      "userName": "Pankaj Sharma",
+      "userName": {
+        "first": "Pankaj",
+        "last": "Sharma"
+      },
       "imgSrc": ""
     },
     {
       "userId": "3",
-      "userName": "Priyanka S",
+      "userName": {
+        "first": "Priyanka",
+        "last": "S"
+      },
       "imgSrc": ""
     }
   ],
   "currentUser": {
     "userId": "1",
-    "userName": "Nidhi Sharma",
+    "userName": {
+      "first": "Nidhi",
+      "last": "Sharma"
+    },
     "friends": ["2", "3"],
     "posts": [
       {
         "userId": "1",
         "text": "do re mi fa so la te",
-        "imageSrc": "",
-        "videoSrc": "",
+        "imageSrc": [],
+        "videoSrc": [],
         "comments": [
           {
             "userId": "2",
