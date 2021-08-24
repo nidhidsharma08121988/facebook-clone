@@ -15,7 +15,8 @@
 .btn {
   border: none;
   outline: none;
-  padding: 0.3rem;
+  padding: 0.4rem;
+  cursor: pointer;
 }
 /* ****************NAVBAR COMPONENT**************** */
 /* general css for navbar */
@@ -28,7 +29,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: top;
-  border-bottom: 1px solid yellow;
+  box-shadow: 1px 1px 6px var(--grey);
 }
 .navbar ul {
   list-style: none;
@@ -42,14 +43,20 @@ li {
   font-size: 1.5rem;
   display: inline-block;
 }
+.left,
+.right,
+.center {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  min-width: 20%;
+}
 /* -------left (side if navbar)------ */
 .left {
-  margin: 0px;
-  display: flex;
-  height: 100%;
   justify-content: left;
-  padding: 0px;
-  border: 1px solid red;
 }
 .search-container-inmenu {
   height: 40px;
@@ -82,15 +89,9 @@ i.search-icon {
 
 /* ----center---- */
 .center {
-  height: 100%;
-  width: 50%;
-  margin: 0px;
-  padding: 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  min-width: 40%;
   font-size: 30px;
-  border: 1px solid blue;
   color: var(--grey);
 }
 
@@ -105,18 +106,46 @@ i.search-icon {
 
 /* ----right---- */
 .right {
-  margin: 0px;
-  height: 100%;
-  border: 1px solid green;
+  justify-content: right;
+  font-size: 20px;
 }
 .profile-btn {
   border-radius: var(--border-radius-search);
+  background-color: transparent;
+  font-size: 0.8rem;
+  font-weight: 700;
+  min-width: 70px;
+  text-overflow: ellipsis;
+  /* whitespace is shorthand for text wrap and white space collapsing */
+  /* no wrap means text not wrapped in next line it is continues till<br> is encountered */
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+.profile-btn:hover {
+  background-color: var(--lighter-grey);
 }
 .profile-btn-img {
   width: 28px;
   height: 28px;
   border-radius: 50%;
   overflow: hidden;
+}
+.menu-btn,
+.messenger-btn,
+.notification-btn,
+.dropdown-btn {
+  transition: all 0.2s ease-in;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.3rem;
+}
+.menu-btn:hover,
+.messenger-btn:hover,
+.notification-btn:hover,
+.dropdown-btn:hover {
+  filter: brightness(0.9);
 }
 
 /* *******************footer********************** */

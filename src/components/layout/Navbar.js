@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 
+const brandStyle = {
+  backgroundColor: 'steelblue',
+  width: '35px',
+  height: '35px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  borderRadius: '50%',
+};
+const brandIconStyle = {
+  color: 'white',
+  fontSize: '30px',
+};
+
 const Navbar = props => {
   const [search, setSearch] = useState('');
   return (
     <div className='navbar'>
       <>
         <ul className='left'>
-          <li
-            className='brand-container-inmenu'
-            style={{
-              backgroundColor: 'steelblue',
-              width: '35px',
-              height: '35px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              borderRadius: '50%',
-            }}
-          >
+          <li className='brand_container_inmenu' style={brandStyle}>
             <div>{'  '}</div>
             <i
               className='fa fa-facebook brand'
               data-testid='brand'
-              style={{
-                color: 'white',
-                fontSize: '30px',
-              }}
+              style={brandIconStyle}
             />
           </li>
           <li className='search-container-inmenu'>
@@ -65,27 +65,30 @@ const Navbar = props => {
         <ul className='right'>
           <li>
             <button data-testid='profile-btn' className='profile-btn btn'>
-              <img src='' alt='profile' className='profile-btn-img' />
+              <img src='' alt='pic' className='profile-btn-img' />
               Name
             </button>
           </li>
           <li>
-            <button data-testid='menu-btn'>
-              <i className='fas fa-bars' />
+            <button data-testid='menu-btn' className='menu-btn btn'>
+              <i className='fas fa-ellipsis-v'></i>
             </button>
           </li>
           <li>
-            <button data-testid='messenger-btn'>
+            <button data-testid='messenger-btn' className='messenger-btn btn'>
               <i className='fab fa-facebook-messenger'></i>
             </button>
           </li>
           <li>
-            <button data-testid='notification-btn'>
+            <button
+              data-testid='notification-btn'
+              className='notification-btn btn'
+            >
               <i className='fas fa-bell' />
             </button>
           </li>
           <li>
-            <button data-testid='dropdown-btn'>
+            <button data-testid='dropdown-btn' className='dropdown-btn btn'>
               <i className='fas fa-caret-down'></i>
             </button>
           </li>
