@@ -43,6 +43,7 @@ li {
   margin: 0.8rem 0.8rem;
   font-size: 1.5rem;
   display: inline-block;
+  cursor: pointer;
 }
 .left,
 .right,
