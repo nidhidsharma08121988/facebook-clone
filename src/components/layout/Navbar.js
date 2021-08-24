@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 const brandStyle = {
   backgroundColor: 'steelblue',
-  width: '35px',
-  height: '35px',
+  width: '40px',
+  height: '40px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
@@ -21,7 +21,7 @@ const Navbar = props => {
     <div className='navbar'>
       <>
         <ul className='left'>
-          <li className='brand_container_inmenu' style={brandStyle}>
+          <li style={brandStyle}>
             <div>{'  '}</div>
             <i
               className='fa fa-facebook brand'

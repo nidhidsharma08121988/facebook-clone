@@ -11,6 +11,7 @@
   --lightest-gey-4: rgb(220, 220, 220);
   --light-grey: rgb(206, 203, 203);
   --grey: rgb(143, 143, 143);
+  --border-radius-nav-center: 10px;
 }
 .btn {
   border: none;
@@ -29,7 +30,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: top;
-  box-shadow: 1px 1px 6px var(--grey);
+  box-shadow: 1px 1px 6px var(--light-grey);
 }
 .navbar ul {
   list-style: none;
@@ -95,13 +96,33 @@ i.search-icon {
   color: var(--grey);
 }
 
+.center li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
 .home-inmenu,
 .friends-inmenu,
 .watch-inmenu,
 .market-inmenu,
 .gaming-inmenu {
   width: 100%;
+  height: 90%;
   font-size: 1em;
+  cursor: pointer;
+  padding: 0.3rem;
+  margin: 0px;
+  border-radius: var(--border-radius-nav-center);
+}
+
+.home-inmenu:hover,
+.friends-inmenu:hover,
+.watch-inmenu:hover,
+.market-inmenu:hover,
+.gaming-inmenu:hover {
+  background-color: var(--lighter-grey);
 }
 
 /* ----right---- */
@@ -115,6 +136,7 @@ i.search-icon {
   font-size: 0.8rem;
   font-weight: 700;
   min-width: 70px;
+  height: 40px;
   text-overflow: ellipsis;
   /* whitespace is shorthand for text wrap and white space collapsing */
   /* no wrap means text not wrapped in next line it is continues till<br> is encountered */
