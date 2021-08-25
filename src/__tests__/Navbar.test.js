@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Navbar from '../components/layout/Navbar';
 import userEvent from '@testing-library/user-event';
@@ -57,5 +57,28 @@ describe('App', () => {
 
   it('should have dropdown btn', () => {
     expect(screen.getByTestId('dropdown-btn')).toBeVisible();
+  });
+
+  it('should display the drop down when menu button is clicked', () => {
+    const menu = screen.getByTestId('menu-btn');
+
+    fireEvent.click(menu);
+
+    expect(screen.getByText(/Create/gi)).toBeVisible();
+    expect(screen.getByText(/Social/gi)).toBeVisible();
+    expect(screen.getByText(/Post/gi)).toBeVisible();
+    expect(screen.getByText(/Story/gi)).toBeVisible();
+    expect(screen.getByText(/Life Event/gi)).toBeVisible();
+    expect(screen.getByText(/Page/gi)).toBeVisible();
+  });
+
+  it('should display messenger when the messenger button is clicked', () => {
+    const messenger = screen.getByTestId('messenger-btn');
+
+    fireEvent.click(messenger);
+
+    expect(screen.getByText(/messenger/gi)).toBeVisible();
+    expect(screen.getByTestId('search-messenger')).toBeVisible();
+    expect(screen.getByText(/see all in messenger/gi)).toBeVisible();
   });
 });

@@ -1,5 +1,7 @@
-import App from '../../../src/App';
 describe('Routing', () => {
+  before(() => {
+    cy.visit('http://localhost:3000');
+  });
   it('should open home page when user clicks on home icon', () => {
     const home = cy.get('[data-testid="home-icon"]');
     home.click();
@@ -34,5 +36,11 @@ describe('Routing', () => {
     const market = cy.get('[data-testid="gaming-icon"]');
     market.click();
     cy.get('[data-testid="gaming-page-container"]').should('be.visible', true);
+  });
+
+  it('should open profile page when user clicks on profile button', () => {
+    const market = cy.get('[data-testid="profile-btn"]');
+    market.click();
+    cy.get('[data-testid="profile-page-container"]').should('be.visible', true);
   });
 });

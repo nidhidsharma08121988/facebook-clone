@@ -12,6 +12,10 @@
   --light-grey: rgb(206, 203, 203);
   --grey: rgb(143, 143, 143);
   --border-radius-nav-center: 10px;
+  --width-height-menu-btn: 40px;
+  --font-size-menu-btn: 1.3rem;
+  --width-height-menu-btn-small: 30px;
+  --font-size-menu-btn-small: 1rem;
 }
 .btn {
   border: none;
@@ -37,12 +41,13 @@
   padding: 0px;
   margin: 0px;
   display: flex;
+  justify-content: start;
   align-items: center;
 }
 li {
   margin: 0.8rem 0.8rem;
   font-size: 1.5rem;
-  display: inline-block;
+  display: inline;
   cursor: pointer;
 }
 .left,
@@ -54,12 +59,28 @@ li {
   flex-direction: row;
   height: 100%;
   align-items: center;
+  justify-content: start;
   min-width: 20%;
 }
 /* -------left (side if navbar)------ */
-.left {
-  justify-content: left;
+li.brand_style {
+  background-color: steelblue;
+  min-width: 40px;
+  min-height: 40px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 2rem;
 }
+li i.brand_icon_style {
+  color: white;
+  font-size: 1em;
+}
+
 .search-container-inmenu {
   height: 40px;
   line-height: 40px;
@@ -91,7 +112,6 @@ i.search-icon {
 
 /* ----center---- */
 .center {
-  justify-content: center;
   min-width: 40%;
   font-size: 30px;
   color: var(--grey);
@@ -103,7 +123,7 @@ i.search-icon {
   align-items: center;
   margin: 0px;
 }
-
+.rest-inmenu,
 .home-inmenu,
 .friends-inmenu,
 .watch-inmenu,
@@ -117,18 +137,21 @@ i.search-icon {
   margin: 0px;
   border-radius: var(--border-radius-nav-center);
 }
+li.rest-inmenu {
+  display: none;
+}
 
 .home-inmenu:hover,
 .friends-inmenu:hover,
 .watch-inmenu:hover,
 .market-inmenu:hover,
-.gaming-inmenu:hover {
+.gaming-inmenu:hover,
+li.rest-inmenu:hover {
   background-color: var(--lighter-grey);
 }
 
 /* ----right---- */
 .right {
-  justify-content: right;
   font-size: 20px;
 }
 .profile-btn {
@@ -160,9 +183,9 @@ i.search-icon {
 .dropdown-btn {
   transition: all 0.2s ease-in;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.3rem;
+  width: var(--width-height-menu-btn);
+  height: var(--width-height-menu-btn);
+  font-size: var(--font-size-menu-btn);
 }
 .menu-btn:hover,
 .messenger-btn:hover,
@@ -175,4 +198,72 @@ i.search-icon {
 footer {
   position: absolute;
   bottom: 0px;
+}
+
+/* *******************mobile styles********************** */
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 12px;
+  }
+  .center {
+    font-size: 20px;
+    color: var(--grey);
+  }
+  .search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  li.brand_style {
+    max-width: 40px;
+    max-height: 40px;
+    min-height: 10px;
+    min-width: 10px;
+    height: 30px;
+    width: 30px;
+    font-size: 1.5rem;
+  }
+
+  .menu-btn,
+  .messenger-btn,
+  .notification-btn,
+  .dropdown-btn {
+    width: var(--width-height-menu-btn-small);
+    height: var(--width-height-menu-btn-small);
+    font-size: var(--font-size-menu-btn-small);
+  }
+
+  li.watch-inmenu,
+  li.market-inmenu,
+  li.gaming-inmenu {
+    display: none;
+  }
+  .center {
+    max-width: 30%;
+    justify-content: left;
+    font-size: 20px;
+    color: var(--grey);
+  }
+  li.rest-inmenu {
+    display: inline-flex;
+  }
+  .search {
+    display: none;
+  }
+  .profile-name {
+    display: none;
+  }
+  .brand_style {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .messenger-btn,
+  .notification-btn {
+    display: none;
+  }
 }
