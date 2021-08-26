@@ -30,27 +30,27 @@ const Center = () => {
   return (
     <ul className='center'>
       <li className='home-inmenu'>
-        <Link to='/'>
+        <Link to='/' className='navbar-link'>
           <i className='fa fa-home' data-testid='home-icon' />
         </Link>
       </li>
       <li className='friends-inmenu'>
-        <Link to='/friends'>
+        <Link to='/friends' className='navbar-link'>
           <i className='fas fa-user-friends' data-testid='friends-icon' />
         </Link>
       </li>
       <li className='watch-inmenu'>
-        <Link to='/watch'>
+        <Link to='/watch' className='navbar-link'>
           <i className='fas fa-video' data-testid='watch-icon' />
         </Link>
       </li>
       <li className='market-inmenu'>
-        <Link to='/market-place'>
+        <Link to='/market-place' className='navbar-link'>
           <i className='fas fa-store' data-testid='market-icon' />
         </Link>
       </li>
       <li className='gaming-inmenu'>
-        <Link to='/gaming'>
+        <Link to='/gaming' className='navbar-link'>
           <i className='fas fa-dice-four' data-testid='gaming-icon'></i>
         </Link>
       </li>
@@ -65,7 +65,7 @@ const Right = () => {
   return (
     <ul className='right'>
       <li>
-        <Link to='profile'>
+        <Link to='profile' style={{ textDecoration: 'none' }}>
           <button data-testid='profile-btn' className='profile-btn btn'>
             <img src='' alt='pic' className='profile-btn-img' />
             <span className='profile-name'>Name</span>

@@ -17,11 +17,22 @@
   --width-height-menu-btn-small: 30px;
   --font-size-menu-btn-small: 1rem;
 }
+.navbar-link {
+  text-decoration: none;
+  text-decoration-color: none;
+  color: var(--grey);
+}
+
 .btn {
   border: none;
   outline: none;
   padding: 0.4rem;
   cursor: pointer;
+}
+.routes-container {
+  position: absolute;
+  display: flex;
+  top: 60px;
 }
 /* ****************NAVBAR COMPONENT**************** */
 /* general css for navbar */
@@ -48,8 +59,8 @@ li {
   margin: 0.8rem 0.8rem;
   font-size: 1.5rem;
   display: inline;
-  cursor: pointer;
 }
+
 .left,
 .right,
 .center {
@@ -136,6 +147,7 @@ i.search-icon {
   padding: 0.3rem;
   margin: 0px;
   border-radius: var(--border-radius-nav-center);
+  color: var(--grey);
 }
 li.rest-inmenu {
   display: none;
