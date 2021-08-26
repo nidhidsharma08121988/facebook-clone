@@ -41,7 +41,7 @@
   padding: 0px;
   margin: 0px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 li {
@@ -59,7 +59,7 @@ li {
   flex-direction: row;
   height: 100%;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   min-width: 20%;
 }
 /* -------left (side if navbar)------ */
@@ -74,7 +74,7 @@ li.brand_style {
   justify-content: space-between;
   align-items: center;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 30px;
 }
 li i.brand_icon_style {
   color: white;
@@ -222,7 +222,7 @@ footer {
     min-width: 10px;
     height: 30px;
     width: 30px;
-    font-size: 1.5rem;
+    font-size: 20px;
   }
 
   .menu-btn,
@@ -253,11 +253,6 @@ footer {
   }
   .profile-name {
     display: none;
-  }
-  .brand_style {
-    font-size: 20px;
-    width: 30px;
-    height: 30px;
   }
 }
 
