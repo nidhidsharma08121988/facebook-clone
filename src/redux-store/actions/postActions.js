@@ -1,31 +1,19 @@
-import { getUserPosts } from '../../network_calls/postAPICalls';
-import { ADD_POST, DELETE_POST, EDIT_POST } from './types';
+import { loadUser, loadPosts } from '../../network/api_calls';
+import { LOAD_POSTS, LOAD_USER } from './types.js';
 
-export const addPost = post => dispatch => {
+export const loadUserAction = () => async dispatch => {
+  const user = await loadUser('1');
+
   dispatch({
-    type: ADD_POST,
-    payload: post,
+    type: LOAD_USER,
+    payload: user,
   });
 };
 
-export const editPost = post => dispatch => {
+export const loadPostsAction = () => async dispatch => {
+  const posts = await loadPosts('1');
   dispatch({
-    type: EDIT_POST,
-    payload: post,
-  });
-};
-
-export const deletePost = id => dispatch => {
-  dispatch({
-    type: DELETE_POST,
-    payload: id,
-  });
-};
-
-export const getPosts = () => dispatch => {
-  const data = getUserPosts();
-  dispatch({
-    type: DELETE_POST,
-    payload: data,
+    type: LOAD_POSTS,
+    payload: posts,
   });
 };

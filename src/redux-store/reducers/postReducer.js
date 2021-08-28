@@ -1,11 +1,24 @@
-import { ADD_POST, DELETE_POST, EDIT_POST } from '../actions/types';
+import { LOAD_POSTS, LOAD_USER } from '../actions/types';
 
-const initialState = {};
+const initialState = {
+  currentUser: {},
+  posts: [],
+};
+
 const postReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
-    case DELETE_POST:
-    case EDIT_POST:
+    case LOAD_USER:
+      console.log('load user');
+      return {
+        ...state,
+        currentUser: { ...action.payload },
+      };
+    case LOAD_POSTS:
+      console.log('load posts');
+      return {
+        ...state,
+        posts: [...action.payload],
+      };
     default:
       return state;
   }

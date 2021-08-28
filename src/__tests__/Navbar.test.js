@@ -1,16 +1,20 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Navbar from '../components/layout/Navbar';
-import userEvent from '@testing-library/user-event';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('App', () => {
   // in cypress we use cy.visit() localhost
   beforeEach(() => {
-    render(<Navbar />);
+    render(
+      <Router>
+        <Navbar />
+      </Router>
+    );
   });
 
   it('should have a facebook icon', () => {
-    expect(screen.getByTestId('brand')).toBeVisible();
+    expect(screen.getByTestId('brand-icon')).toBeVisible();
   });
 
   it('should have a search bar', () => {

@@ -7,26 +7,7 @@
         "last": "Sharma"
       },
       "userimg": "https://via.placeholder.com/300/09f/fff.png",
-      "friends": ["2", "3"],
-      "posts": [
-        {
-          "user": "1",
-          "postId": "11",
-          "text": "do re mi fa so la te",
-          "imageSrc": ["https://via.placeholder.com/300/09f/fff.png"],
-          "videoSrc": [],
-          "comments": [
-            {
-              "userId": "2",
-              "text": "Great"
-            },
-            {
-              "userId": "3",
-              "text": "Wow"
-            }
-          ]
-        }
-      ]
+      "friends": ["2", "3"]
     },
     {
       "userId": "2",
@@ -35,26 +16,7 @@
         "last": "Sharma"
       },
       "friends": ["1", "3"],
-      "userimg": "https://via.placeholder.com/300/09f/fff.png",
-      "posts": [
-        {
-          "user": "2",
-          "postId": "21",
-          "text": "post1",
-          "imageSrc": [],
-          "videoSrc": [],
-          "comments": [
-            {
-              "userId": "1",
-              "text": "Great"
-            },
-            {
-              "userId": "3",
-              "text": "Wow"
-            }
-          ]
-        }
-      ]
+      "userimg": "https://via.placeholder.com/300/09f/fff.png"
     },
     {
       "userId": "3",
@@ -63,54 +25,68 @@
         "last": "Sharma"
       },
       "userimg": "https://via.placeholder.com/300/09f/fff.png",
-      "friends": ["2", "1"],
-      "posts": [
+      "friends": ["2", "1"]
+    }
+  ],
+  "posts": [
+    {
+      "user": "1",
+      "postId": "11",
+      "text": "do re mi fa so la te",
+      "imageSrc": ["https://via.placeholder.com/300/09f/fff.png"],
+      "videoSrc": [],
+      "comments": [
         {
-          "user": "3",
-          "postId": "31",
-          "text": "post",
-          "imageSrc": [],
-          "videoSrc": [],
-          "comments": [
-            {
-              "userId": "2",
-              "text": "Great"
-            },
-            {
-              "userId": "1",
-              "text": "Wow"
-            }
-          ]
+          "userId": "2",
+          "text": "Great"
+        },
+        {
+          "userId": "3",
+          "text": "Wow"
+        }
+      ]
+    },
+    {
+      "user": "1",
+      "postId": "11",
+      "text": "hello",
+      "imageSrc": ["https://via.placeholder.com/300/09f/fff.png"],
+      "videoSrc": [],
+      "comments": []
+    },
+    {
+      "user": "3",
+      "postId": "31",
+      "text": "post",
+      "imageSrc": [],
+      "videoSrc": [],
+      "comments": [
+        {
+          "userId": "2",
+          "text": "Great"
+        },
+        {
+          "userId": "1",
+          "text": "Wow"
+        }
+      ]
+    },
+    {
+      "user": "2",
+      "postId": "21",
+      "text": "post1",
+      "imageSrc": [],
+      "videoSrc": [],
+      "comments": [
+        {
+          "userId": "1",
+          "text": "Great"
+        },
+        {
+          "userId": "3",
+          "text": "Wow"
         }
       ]
     }
-  ],
-  "currentUser": {
-    "userId": "1",
-    "userName": {
-      "first": "Nidhi",
-      "last": "Sharma"
-    },
-    "userimg": "https://via.placeholder.com/300/09f/fff.png",
-    "friends": ["2", "3"],
-    "posts": [
-      {
-        "user": "1",
-        "postId": "11",
-        "text": "do re mi fa so la te",
-        "imageSrc": ["https://via.placeholder.com/300/09f/fff.png"],
-        "videoSrc": [],
-        "comments": [
-          {
-            "userId": "2",
-            "text": "Great"
-          },
-          {
-            "userId": "3",
-            "text": "Wow"
-          }
-        ]
-      }
-    ]
-  }
+  ]
 }
