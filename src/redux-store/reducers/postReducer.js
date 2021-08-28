@@ -3,21 +3,20 @@ import { LOAD_POSTS, LOAD_USER } from '../actions/types';
 const initialState = {
   currentUser: {},
   posts: [],
+  post: {},
 };
 
 const postReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_USER:
-      console.log('load user');
       return {
         ...state,
-        currentUser: { ...action.payload },
+        currentUser: action.payload,
       };
     case LOAD_POSTS:
-      console.log('load posts');
       return {
         ...state,
-        posts: [...action.payload],
+        posts: action.payload,
       };
     default:
       return state;

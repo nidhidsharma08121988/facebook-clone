@@ -25,11 +25,4 @@ const Home = props => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    loadPostsAction,
-    loadUserAction,
-  };
-};
-
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(null, { loadPostsAction, loadUserAction })(Home);

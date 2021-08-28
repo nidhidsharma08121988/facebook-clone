@@ -3,7 +3,6 @@ import { LOAD_POSTS, LOAD_USER } from './types.js';
 
 export const loadUserAction = () => async dispatch => {
   const user = await loadUser('1');
-
   dispatch({
     type: LOAD_USER,
     payload: user,
