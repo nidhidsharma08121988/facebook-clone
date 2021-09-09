@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import classes from './Navbar.module.css';
+
 const Left = props => {
   const { search, set } = props;
   return (
-    <ul className='left'>
-      <li className='brand_style' data-testid='brand-icon'>
+    <ul className={classes.left}>
+      <li className={classes.brandStyle} data-testid='brand-icon'>
         <Link to='/'>
           <div>{'  '}</div>
-          <i className='fa fa-facebook brand_icon_style' />
+          <i className={`${classes.brandIconStyle} fa fa-facebook`} />
         </Link>
       </li>
-      <li className='search-container-inmenu'>
-        <i className='fa fa-search search-icon' style={{ zIndex: 1 }} />
+      <li className={classes.searchContainerInmenu}>
+        <i
+          className={`fa fa-search ${classes.searchIcon}`}
+          style={{ zIndex: 1 }}
+        />
         <input
           onChange={e => set(e.target.value)}
           type='text'
           value={search}
           placeholder='Search Facebook'
           data-testid='search'
-          className='search'
+          className={classes.search}
         />
       </li>
     </ul>
@@ -28,33 +33,33 @@ const Left = props => {
 
 const Center = () => {
   return (
-    <ul className='center'>
-      <li className='home-inmenu'>
-        <Link to='/' className='navbar-link'>
+    <ul className={classes.center}>
+      <li className={classes.homeInmenu}>
+        <Link to='/' className={classes.navbarLink}>
           <i className='fa fa-home' data-testid='home-icon' />
         </Link>
       </li>
-      <li className='friends-inmenu'>
-        <Link to='/friends' className='navbar-link'>
+      <li className={classes.friendsInmenu}>
+        <Link to='/friends' className={classes.navbarLink}>
           <i className='fas fa-user-friends' data-testid='friends-icon' />
         </Link>
       </li>
-      <li className='watch-inmenu'>
-        <Link to='/watch' className='navbar-link'>
+      <li className={classes.watchInmenu}>
+        <Link to='/watch' className={classes.navbarLink}>
           <i className='fas fa-video' data-testid='watch-icon' />
         </Link>
       </li>
-      <li className='market-inmenu'>
-        <Link to='/market-place' className='navbar-link'>
+      <li className={classes.marketInmenu}>
+        <Link to='/market-place' className={classes.navbarLink}>
           <i className='fas fa-store' data-testid='market-icon' />
         </Link>
       </li>
-      <li className='gaming-inmenu'>
-        <Link to='/gaming' className='navbar-link'>
+      <li className={classes.gamingInmenu}>
+        <Link to='/gaming' className={classes.navbarLink}>
           <i className='fas fa-dice-four' data-testid='gaming-icon'></i>
         </Link>
       </li>
-      <li className='rest-inmenu'>
+      <li className={classes.restInmenu}>
         <i className='fas fa-bars' data-testid='rest-icon'></i>
       </li>
     </ul>
@@ -63,32 +68,44 @@ const Center = () => {
 
 const Right = () => {
   return (
-    <ul className='right'>
+    <ul className={classes.right}>
       <li>
         <Link to='profile' style={{ textDecoration: 'none' }}>
-          <button data-testid='profile-btn' className='profile-btn btn'>
-            <img src='' alt='pic' className='profile-btn-img' />
-            <span className='profile-name'>Name</span>
+          <button
+            data-testid='profile-btn'
+            className={`${classes.profileBtn} btn`}
+          >
+            <img src='' alt='pic' className={classes.profileBtnImg} />
+            <span className={classes.profileName}>Name</span>
           </button>
         </Link>
       </li>
       <li>
-        <button data-testid='menu-btn' className='menu-btn btn'>
+        <button data-testid='menu-btn' className={`${classes.menuBtn} btn`}>
           <i className='fas fa-ellipsis-v'></i>
         </button>
       </li>
       <li>
-        <button data-testid='messenger-btn' className='messenger-btn btn'>
+        <button
+          data-testid='messenger-btn'
+          className={`${classes.messengerBtn} btn`}
+        >
           <i className='fab fa-facebook-messenger'></i>
         </button>
       </li>
       <li>
-        <button data-testid='notification-btn' className='notification-btn btn'>
+        <button
+          data-testid='notification-btn'
+          className={`${classes.notificationBtn} btn`}
+        >
           <i className='fas fa-bell' />
         </button>
       </li>
       <li>
-        <button data-testid='dropdown-btn' className='dropdown-btn btn'>
+        <button
+          data-testid='dropdown-btn'
+          className={`${classes.dropdownBtn} btn`}
+        >
           <i className='fas fa-caret-down'></i>
         </button>
       </li>
@@ -98,7 +115,7 @@ const Right = () => {
 const Navbar = props => {
   const [search, setSearch] = useState('');
   return (
-    <div className='navbar'>
+    <div className={classes.navbar}>
       <>
         <Left search={search} set={setSearch} />
       </>

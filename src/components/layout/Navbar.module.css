@@ -1,0 +1,251 @@
+/* general css for navbar */
+.navbar {
+  margin: 0;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 6px var(--light-grey);
+}
+
+.navbarLink {
+  text-decoration: none;
+  text-decoration-color: none;
+  color: var(--grey);
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar li {
+  margin: 0.8rem 0.8rem;
+  font-size: 1.5rem;
+  display: inline;
+}
+
+.left,
+.right,
+.center {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 20%;
+}
+/* -------left side of navbar------ */
+li.brandStyle {
+  background-color: steelblue;
+  min-width: 40px;
+  min-height: 40px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+li i.brandIconStyle {
+  color: white;
+  font-size: 1em;
+}
+
+.searchContainerInmenu {
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+i.searchIcon {
+  align-self: center;
+  font-size: 1rem;
+  color: var(--grey);
+  margin-right: -1.4rem;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  z-index: 2;
+}
+
+.search {
+  line-height: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-search);
+  outline: none;
+  border: none;
+  background-color: var(--background-color-search);
+  padding: 0.5rem 1.8rem;
+  z-index: 0;
+}
+
+/* ----center---- */
+.center {
+  min-width: 40%;
+  font-size: 30px;
+  color: var(--grey);
+  display: flex;
+  align-items: center;
+}
+
+.center li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.restInmenu,
+.homeInmenu,
+.friendsInmenu,
+.watchInmenu,
+.marketInmenu,
+.gamingInmenu {
+  width: 100%;
+  height: 90%;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 0.3rem;
+  margin: 0px;
+  border-radius: var(--border-radius-nav-center);
+  color: var(--grey);
+}
+
+li.restInmenu {
+  display: none;
+}
+
+.homeInmenu:hover,
+.friendsInmenu:hover,
+.watchInmenu:hover,
+.marketInmenu:hover,
+.gamingInmenu:hover,
+li.restInmenu:hover {
+  background-color: var(--lighter-grey);
+}
+
+/* ----right---- */
+.right {
+  font-size: 20px;
+}
+.profileBtn {
+  border-radius: var(--border-radius-search);
+  background-color: transparent;
+  font-size: 0.8rem;
+  font-weight: 700;
+  min-width: 70px;
+  height: 40px;
+  text-overflow: ellipsis;
+  /* whitespace is shorthand for text wrap and white space collapsing */
+  /* no wrap means text not wrapped in next line it is continues till<br> is encountered */
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+.profileBtn:hover {
+  background-color: var(--lighter-grey);
+}
+.profileBtnImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.menuBtn,
+.messengerBtn,
+.notificationBtn,
+.dropdownBtn {
+  transition: all 0.2s ease-in;
+  border-radius: 50%;
+  width: var(--width-height-menu-btn);
+  height: var(--width-height-menu-btn);
+  font-size: var(--font-size-menu-btn);
+}
+.menuBtn:hover,
+.messengerBtn:hover,
+.notificationBtn:hover,
+.dropdownBtn:hover {
+  filter: brightness(0.9);
+}
+
+/* *******************mobile styles********************** */
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 12px;
+  }
+  .center {
+    font-size: 20px;
+    color: var(--grey);
+  }
+  .search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  li.brandStyle {
+    max-width: 40px;
+    max-height: 40px;
+    min-height: 10px;
+    min-width: 10px;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+  }
+
+  .menuBtn,
+  .messengerBtn,
+  .notificationBtn,
+  .dropdownBtn {
+    width: var(--width-height-menu-btn-small);
+    height: var(--width-height-menu-btn-small);
+    font-size: var(--font-size-menu-btn-small);
+  }
+
+  li.watchInmenu,
+  li.marketInmenu,
+  li.gamingInmenu {
+    display: none;
+  }
+  .center {
+    max-width: 30%;
+    justify-content: left;
+    font-size: 20px;
+    color: var(--grey);
+  }
+  li.restInmenu {
+    display: inline-flex;
+  }
+  .search {
+    display: none;
+  }
+  .profileName {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .messengerBtn,
+  .notificationBtn {
+    display: none;
+  }
+}

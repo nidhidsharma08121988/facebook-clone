@@ -85,4 +85,6 @@ describe('App', () => {
     expect(screen.getByTestId('search-messenger')).toBeVisible();
     expect(screen.getByText(/see all in messenger/gi)).toBeVisible();
   });
+
+  
 });
