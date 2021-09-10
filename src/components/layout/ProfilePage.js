@@ -1,9 +1,9 @@
 import React from 'react';
-
+import commonClass from './Common.module.css';
 const ProfilePage = () => {
   return (
     <div
-      className='profile-page-container'
+      className={commonClass.wholeContainer}
       data-testid='profile-page-container'
     >
       Profile

@@ -1,8 +1,11 @@
 import React from 'react';
-
+import commonClass from './Common.module.css';
 const GamingPage = () => {
   return (
-    <div className='gaming-page-container' data-testid='gaming-page-container'>
+    <div
+      className={commonClass.wholeContainer}
+      data-testid='gaming-page-container'
+    >
       Gaming
     </div>
   );

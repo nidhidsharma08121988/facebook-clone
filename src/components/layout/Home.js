@@ -8,6 +8,7 @@ import {
 import HomeLeft from '../home-page/HomeLeft';
 import HomeCenter from '../home-page/HomeCenter';
 import HomeRight from '../home-page/HomeRight';
+import commonClass from './Common.module.css';
 
 const Home = props => {
   const { loadPostsAction, loadUserAction } = props;
@@ -17,7 +18,10 @@ const Home = props => {
     //eslint-disable-next-line
   }, []);
   return (
-    <div className='home-page-container' data-testid='home-page-container'>
+    <div
+      className={commonClass.wholeContainer}
+      data-testid='home-page-container'
+    >
       <HomeLeft />
       <HomeCenter />
       <HomeRight />
