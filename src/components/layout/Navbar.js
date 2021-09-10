@@ -14,18 +14,20 @@ const Left = props => {
         </Link>
       </li>
       <li className={classes.searchContainerInmenu}>
-        <i
-          className={`fa fa-search ${classes.searchIcon}`}
-          style={{ zIndex: 1 }}
-        />
-        <input
-          onChange={e => set(e.target.value)}
-          type='text'
-          value={search}
-          placeholder='Search Facebook'
-          data-testid='search'
-          className={classes.search}
-        />
+        <div className={classes.searchIconContainer}>
+          <i
+            className={`fa fa-search ${classes.searchIcon}`}
+            style={{ zIndex: 1 }}
+          />
+          <input
+            onChange={e => set(e.target.value)}
+            type='text'
+            value={search}
+            placeholder='Search Facebook'
+            data-testid='search'
+            className={classes.search}
+          />
+        </div>
       </li>
     </ul>
   );
@@ -59,9 +61,6 @@ const Center = () => {
           <i className='fas fa-dice-four' data-testid='gaming-icon'></i>
         </Link>
       </li>
-      <li className={classes.restInmenu}>
-        <i className='fas fa-bars' data-testid='rest-icon'></i>
-      </li>
     </ul>
   );
 };
@@ -79,11 +78,6 @@ const Right = () => {
             <span className={classes.profileName}>Name</span>
           </button>
         </Link>
-      </li>
-      <li>
-        <button data-testid='menu-btn' className={`${classes.menuBtn} btn`}>
-          <i className='fas fa-ellipsis-v'></i>
-        </button>
       </li>
       <li>
         <button
@@ -108,6 +102,9 @@ const Right = () => {
         >
           <i className='fas fa-caret-down'></i>
         </button>
+      </li>
+      <li className={classes.restInmenu}>
+        <i className='fas fa-bars' data-testid='rest-icon'></i>
       </li>
     </ul>
   );
