@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HomeLeft = () => {
-  return <div></div>;
+  return <div>Left menu</div>;
 };
 
 export default HomeLeft;
