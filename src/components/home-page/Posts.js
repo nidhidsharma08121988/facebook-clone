@@ -10,7 +10,7 @@ const Posts = props => {
         ? props.posts.map((post, index) => {
             return (
               <div key={index} className={classes.postContainer}>
-                <Post text={post.text} />
+                <Post post={post} />
               </div>
             );
           })

@@ -44,6 +44,16 @@
           "userId": "3",
           "text": "Wow"
         }
+      ],
+      "likes": [
+        {
+          "user": "2",
+          "type": "heart"
+        },
+        {
+          "user": "2",
+          "type": "like"
+        }
       ]
     },
     {
