@@ -23,7 +23,6 @@ const Posts = props => {
 Posts.propTypes = {
   posts: PropTypes.array.isRequired,
 };
-
 const mapStateToProps = state => ({
   posts: state.post_reducer.posts,
 });

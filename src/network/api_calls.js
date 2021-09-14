@@ -1,11 +1,11 @@
 import axios from 'axios';
 const api = 'http://localhost:5000';
 
-export const loadUser = async userId => {
+export const loadUser = async id => {
   try {
     const res = await axios.get(`${api}/users`);
     const data = res.data;
-    const user = data.filter(user => user.id === userId);
+    const user = data.filter(user => user.userId === id);
     return user;
   } catch (error) {
     console.log(error);
@@ -28,10 +28,9 @@ export const loadPosts = async userId => {
 export const getUser = async id => {
   try {
     const res = await axios.get(`${api}/users`);
-    const data = res.data;
-    const users = data.filter(user => user.id === id);
+    const data = await res.data;
+    const users = data.filter(user => user.userId === id);
     const user = users[0];
-    console.log(user);
     return user;
   } catch (error) {
     console.log(error);
