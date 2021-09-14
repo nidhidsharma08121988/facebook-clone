@@ -21,13 +21,17 @@ const Top = props => {
 
   return user !== {} && user !== undefined ? (
     <div className={classes.top}>
-      <div>
+      <div className={classes.nameSection}>
         <img
-          src='https://via.placeholder.com/300'
+          data-testid='post-user-image'
+          src={user.userImg}
           alt='author'
           className={classes.image}
         />
-        <span>{user.userName}</span>
+        <div data-testid='username'>{user.userName}</div>
+      </div>
+      <div className={classes.right}>
+        <i className={`fas fa-ellipsis-h ${classes.more}`}></i>
       </div>
     </div>
   ) : (
@@ -36,7 +40,11 @@ const Top = props => {
 };
 const ThePost = props => {
   const { post } = props;
-  return <div>{post.text}</div>;
+  return (
+    <div className={classes.content} data-testid='post-content'>
+      {post.text}
+    </div>
+  );
 };
 
 export const Post = props => {

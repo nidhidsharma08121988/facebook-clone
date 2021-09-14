@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Post from '../components/home-page/Post';
+import axios from 'axios';
 
-
+jest.mock('axios');
 describe('Post', () => {
   beforeEach(() => {
     const post = {
@@ -32,15 +33,29 @@ describe('Post', () => {
         },
       ],
     };
-
+    const user = {
+      userId: '1',
+      userName: {
+        first: 'Nidhi',
+        last: 'Sharma',
+      },
+      userimg: 'https://via.placeholder.com/300/09f/fff.png',
+      friends: ['2', '3'],
+    };
+    axios.get.mockResolvedValue(user);
     render(<Post post={post} />);
   });
   it('should display username of the author image and name', () => {
-    expect(screen.queryByTestId('post-user-image')).toBeVisible();
-    expect(screen.queryAllByTestId('username')).toBeVisible();
+    setTimeout(() => {
+      expect(screen.queryByTestId('post-user-image')).toBeVisible();
+      expect(screen.queryByTestId('username')).toBeVisible();
+    }, 1000);
   });
+
   it('should display post', () => {
-    expect(screen.queryByTestId('post-content')).toBeVisible();
+    setTimeout(() => {
+      expect(screen.queryByTestId('post-content')).toBeVisible();
+    }, 1000);
   });
   it('should display number of likes if more than zero likes are there', () => {
     expect(screen.queryByTestId('likes-number')).toBeVisible();
