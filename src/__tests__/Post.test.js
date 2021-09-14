@@ -35,11 +35,8 @@ describe('Post', () => {
     };
     const user = {
       userId: '1',
-      userName: {
-        first: 'Nidhi',
-        last: 'Sharma',
-      },
-      userimg: 'https://via.placeholder.com/300/09f/fff.png',
+      userName: 'Nidhi',
+      userImg: 'https://via.placeholder.com/300/09f/fff.png',
       friends: ['2', '3'],
     };
     axios.get.mockResolvedValue(user);

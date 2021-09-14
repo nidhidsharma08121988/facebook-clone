@@ -15,11 +15,8 @@ describe('Post Feature', () => {
     const res = {
       currentUser: {
         userId: '1',
-        userName: {
-          first: 'Nidhi',
-          last: 'Sharma',
-        },
-        userimg: 'https://via.placeholder.com/300/09f/fff.png',
+        userName: 'Nidhi',
+        userImage: 'https://via.placeholder.com/300/09f/fff.png',
         friends: ['2', '3'],
       },
       posts: [
