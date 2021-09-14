@@ -51,18 +51,19 @@
           "type": "heart"
         },
         {
-          "user": "2",
+          "user": "3",
           "type": "like"
         }
       ]
     },
     {
       "user": "1",
-      "postId": "11",
+      "postId": "21",
       "text": "hello",
       "imageSrc": ["https://via.placeholder.com/300/09f/fff.png"],
       "videoSrc": [],
-      "comments": []
+      "comments": [],
+      "likes": []
     },
     {
       "user": "3",
@@ -79,11 +80,12 @@
           "userId": "1",
           "text": "Wow"
         }
-      ]
+      ],
+      "likes": []
     },
     {
       "user": "2",
-      "postId": "21",
+      "postId": "41",
       "text": "post1",
       "imageSrc": [],
       "videoSrc": [],

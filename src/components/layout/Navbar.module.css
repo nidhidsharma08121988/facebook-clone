@@ -1,16 +1,23 @@
 /* general css for navbar */
 .navbar {
-  margin: 0;
-  padding: 0 0.5rem;
   width: 100%;
   height: 60px;
   position: fixed;
-  top: 0px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  margin: 0;
+  padding: 0 0.5rem;
+
+  top: 0px;
+  left: 0;
+  right: 0;
   box-shadow: 1px 1px 6px var(--light-grey);
+  z-index: 3;
+  background-color: white;
 }
 
 .navbarLink {

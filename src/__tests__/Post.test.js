@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Post from '../components/home-page/Post';
 
+
 describe('Post', () => {
   beforeEach(() => {
     const post = {

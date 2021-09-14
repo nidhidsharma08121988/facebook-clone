@@ -3,3 +3,5 @@ export const LOAD_POSTS = 'LOAD_POST';
 export const DELETE_POST = 'DELETE_POST';
 export const EDIT_POST = 'EDIT_POST';
 export const LOAD_USER = 'LOAD_USER';
+
+export const GET_USERNAME = 'GET_USERNAME';

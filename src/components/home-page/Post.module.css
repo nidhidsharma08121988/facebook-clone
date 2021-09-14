@@ -1,0 +1,6 @@
+.card{
+    display:flex;
+    max-width:100%;
+    width:100%;
+    box-shadow: 1px 1px 3px var(--lightest-gey-4);
+}

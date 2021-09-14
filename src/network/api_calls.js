@@ -24,3 +24,16 @@ export const loadPosts = async userId => {
   }
   return [];
 };
+
+export const getUser = async id => {
+  try {
+    const res = await axios.get(`${api}/users`);
+    const data = res.data;
+    const users = data.filter(user => user.id === id);
+    const user = users[0];
+    console.log(user);
+    return user;
+  } catch (error) {
+    console.log(error);
+  }
+};

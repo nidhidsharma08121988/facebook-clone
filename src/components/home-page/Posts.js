@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Post from './Post';
 import classes from './Posts.module.css';
@@ -17,6 +18,10 @@ const Posts = props => {
         : 'No Posts'}
     </div>
   );
+};
+
+Posts.propTypes = {
+  posts: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({
