@@ -53,8 +53,14 @@ const DisplayCommentLikes = props => {
   const { post } = props;
   return (
     post && (
-      <div data-testid='likes-comment'>
-        <div data-testid='likes-number'>{post.likes && post.likes.length}</div>
+      <div
+        data-testid='like-comment-share-bar'
+        className={classes.likeCommentShare}
+      >
+        <div data-testid='likes-number'>
+          <i className={`far fa-thumbs-up ${classes.likeIcon}`} />
+          <span>{post.likes && post.likes.length}</span>
+        </div>
       </div>
     )
   );

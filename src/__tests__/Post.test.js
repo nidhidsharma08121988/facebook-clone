@@ -59,17 +59,17 @@ describe('Post', () => {
       expect(screen.queryByTestId('post-content')).toBeVisible();
     }, 1000);
   });
-  it('should display number of likes if more than zero likes are there', () => {
+  it('should display number of likes', () => {
     setTimeout(() => {
       expect(screen.queryByTestId('likes-number')).toBeVisible();
     }, 1000);
   });
 
-  it('should display number of comments if more than zero comments are there', () => {
+  it('should display number of comments', () => {
     expect(screen.queryByTestId('comment-number')).toBeVisible();
   });
 
-  it('should display like and comment bar', () => {
+  it('should display like, comment, share bar', () => {
     expect(screen.queryByTestId('like-comment-share-bar')).toBeVisible();
   });
 });
