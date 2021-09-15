@@ -69,6 +69,9 @@ const DisplayCommentLikes = props => {
             {post.comments && post.comments.length > 0 && post.comments.length}
           </span>
         </div>
+        <div data-testid='share'>
+          <i className={`fa fa-share ${classes.icon}`} />
+        </div>
       </div>
     )
   );

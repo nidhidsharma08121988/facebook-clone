@@ -71,7 +71,9 @@ describe('Post', () => {
     }, 1000);
   });
 
-  it('should display like, comment, share bar', () => {
-    expect(screen.queryByTestId('like-comment-share-bar')).toBeVisible();
+  it('should display share option', () => {
+    setTimeout(() => {
+      expect(screen.queryByTestId('share')).toBeVisible();
+    });
   });
 });
