@@ -10,7 +10,7 @@ const Left = props => {
       <li className={classes.brandStyle} data-testid='brand-icon'>
         <Link to='/'>
           <div>{'  '}</div>
-          <i className={`${classes.brandIconStyle} fa fa-facebook`} />
+          <i className={`fab fa-facebook ${classes.brandIconStyle}`}></i>
         </Link>
       </li>
       <li className={classes.searchContainerInmenu}>
@@ -71,6 +71,7 @@ const Right = () => {
       <li>
         <Link to='profile' style={{ textDecoration: 'none' }}>
           <button
+            name='profile'
             data-testid='profile-btn'
             className={`${classes.profileBtn} btn`}
           >
@@ -81,6 +82,7 @@ const Right = () => {
       </li>
       <li>
         <button
+          name='messenger'
           data-testid='messenger-btn'
           className={`${classes.messengerBtn} btn`}
         >
@@ -89,6 +91,7 @@ const Right = () => {
       </li>
       <li>
         <button
+          name='notification'
           data-testid='notification-btn'
           className={`${classes.notificationBtn} btn`}
         >
@@ -97,6 +100,7 @@ const Right = () => {
       </li>
       <li>
         <button
+          name='more'
           data-testid='dropdown-btn'
           className={`${classes.dropdownBtn} btn`}
         >

@@ -53,7 +53,7 @@
 
 /* -------left side of navbar------ */
 li.brandStyle {
-  background-color: steelblue;
+  background-color: white;
   min-width: 40px;
   min-height: 40px;
   height: 40px;
@@ -67,8 +67,8 @@ li.brandStyle {
 }
 
 li i.brandIconStyle {
-  color: white;
-  font-size: 1em;
+  color: steelblue;
+  font-size: 1.2em;
 }
 
 .searchContainerInmenu {

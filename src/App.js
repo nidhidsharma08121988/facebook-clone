@@ -28,11 +28,6 @@ function App() {
             <Route exact path='/profile' component={ProfilePage} />
           </Switch>
         </div>
-        <footer>
-          <a href='https://pngtree.com/so/facebook'>
-            facebook png from pngtree.com/
-          </a>
-        </footer>
       </Router>
     </Provider>
   );
