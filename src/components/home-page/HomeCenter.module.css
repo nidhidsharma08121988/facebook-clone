@@ -1,0 +1,4 @@
+.homeCenter {
+  display: flex;
+  flex-direction: column;
+}

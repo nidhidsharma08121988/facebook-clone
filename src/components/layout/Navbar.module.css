@@ -53,22 +53,16 @@
 
 /* -------left side of navbar------ */
 li.brandStyle {
-  background-color: white;
-  min-width: 40px;
-  min-height: 40px;
-  height: 40px;
-  width: 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  align-self: center;
   border-radius: 50%;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 li i.brandIconStyle {
   color: steelblue;
-  font-size: 1.2em;
 }
 
 .searchContainerInmenu {
@@ -80,6 +74,7 @@ li i.brandIconStyle {
   max-width: 90%;
   margin: 0px;
   padding: 0px;
+  line-height: normal;
 }
 
 .searchIconContainer {
@@ -231,18 +226,6 @@ li.restInmenu:hover {
     align-items: center;
     height: 100%;
     width: 90%;
-  }
-
-  li.brandStyle {
-    max-width: 40px;
-    max-height: 40px;
-    width: var(--width-height-menu-btn-small);
-    height: var(--width-height-menu-btn-small);
-    font-size: var(--font-size-menu-btn-small);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   .searchContainerInmenu {

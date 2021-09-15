@@ -5,3 +5,9 @@
   display: grid;
   grid-template-columns: 30% 50% 20%;
 }
+
+@media screen and (max-width: 500px) {
+  .wholeContainer {
+    grid-template-columns: 0% 100% 0%;
+  }
+}

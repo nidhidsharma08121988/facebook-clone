@@ -9,7 +9,6 @@ const Left = props => {
     <ul className={classes.left}>
       <li className={classes.brandStyle} data-testid='brand-icon'>
         <Link to='/'>
-          <div>{'  '}</div>
           <i className={`fab fa-facebook ${classes.brandIconStyle}`}></i>
         </Link>
       </li>
