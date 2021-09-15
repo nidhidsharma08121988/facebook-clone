@@ -64,7 +64,7 @@
   margin: 0.7rem;
   align-self: center;
 }
-.likeIcon {
+.icon {
   color: var(--grey);
   cursor: pointer;
 }

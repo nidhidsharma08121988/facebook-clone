@@ -66,7 +66,9 @@ describe('Post', () => {
   });
 
   it('should display number of comments', () => {
-    expect(screen.queryByTestId('comment-number')).toBeVisible();
+    setTimeout(() => {
+      expect(screen.queryByTestId('comments-number')).toBeVisible();
+    }, 1000);
   });
 
   it('should display like, comment, share bar', () => {
