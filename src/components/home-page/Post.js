@@ -6,14 +6,14 @@ import { useEffect } from 'react';
 
 const DisplayPost = props => {
   const { user, post } = props;
-  return (
-    user &&
-    post && (
-      <div className={classes.displayPost}>
-        <Top user={user} />
-        <ThePost post={post} />
-      </div>
-    )
+  return user && post ? (
+    <div className={classes.displayPost}>
+      <Top user={user} />
+      <ThePost post={post} />
+      <DisplayCommentLikes post={post} />
+    </div>
+  ) : (
+    'Nothing to display'
   );
 };
 const Top = props => {
@@ -28,7 +28,7 @@ const Top = props => {
           alt='author'
           className={classes.image}
         />
-        <div data-testid='username'>{user.userName}</div>
+        <div data-testid='username'>{user.userName && user.userName}</div>
       </div>
       <div className={classes.right}>
         <i className={`fas fa-ellipsis-h ${classes.more}`}></i>
@@ -41,16 +41,32 @@ const Top = props => {
 const ThePost = props => {
   const { post } = props;
   return (
-    <div className={classes.content} data-testid='post-content'>
-      {post.text}
-    </div>
+    post && (
+      <div className={classes.content} data-testid='post-content'>
+        {post.text}
+      </div>
+    )
   );
 };
 
+const DisplayCommentLikes = props => {
+  const { post } = props;
+  return (
+    post && (
+      <div data-testid='likes-comment'>
+        <div data-testid='likes-number'>{post.likes && post.likes.length}</div>
+      </div>
+    )
+  );
+};
 export const Post = props => {
   useEffect(() => {
-    setPost(props.post);
-    getUser(props.post.user).then(res => setUser(res));
+    try {
+      setPost(props.post);
+      getUser(props.post.user).then(res => setUser(res));
+    } catch (error) {
+      console.log(error);
+    }
     //eslint-disable-next-line
   }, [props.post]);
 

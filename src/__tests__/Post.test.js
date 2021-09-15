@@ -42,6 +42,11 @@ describe('Post', () => {
     axios.get.mockResolvedValue(user);
     render(<Post post={post} />);
   });
+
+  afterEach(() => {
+    clearTimeout();
+  });
+
   it('should display username of the author image and name', () => {
     setTimeout(() => {
       expect(screen.queryByTestId('post-user-image')).toBeVisible();
@@ -55,7 +60,9 @@ describe('Post', () => {
     }, 1000);
   });
   it('should display number of likes if more than zero likes are there', () => {
-    expect(screen.queryByTestId('likes-number')).toBeVisible();
+    setTimeout(() => {
+      expect(screen.queryByTestId('likes-number')).toBeVisible();
+    }, 1000);
   });
 
   it('should display number of comments if more than zero comments are there', () => {
