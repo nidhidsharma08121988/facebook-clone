@@ -158,6 +158,10 @@ li.restInmenu:hover {
 /* ----right---- */
 
 .profileBtn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
   border-radius: var(--border-radius-search);
   background-color: transparent;
   font-size: 0.8rem;

@@ -6,7 +6,7 @@ export const loadUser = async id => {
     const res = await axios.get(`${api}/users`);
     const data = res.data;
     const user = data.filter(user => user.userId === id);
-    return user;
+    return user[0];
   } catch (error) {
     console.log(error);
   }
