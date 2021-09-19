@@ -1,5 +1,14 @@
-import { loadUser, loadPosts } from '../../network/api_calls';
-import { LOAD_POSTS, LOAD_USER } from './types.js';
+import { loadUser, loadPosts, addPost } from '../../network/api_calls';
+import { ADD_POST, LOAD_POSTS, LOAD_USER } from './types.js';
+
+export const setPostAction = post => async dispatch => {
+  const data = await addPost(post);
+  console.log(data);
+  dispatch({
+    type: ADD_POST,
+    payload: post,
+  });
+};
 
 export const loadUserAction = () => async dispatch => {
   const user = await loadUser('1');

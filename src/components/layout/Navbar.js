@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import { connect } from 'react-redux';
 import classes from './Navbar.module.css';
 
@@ -59,7 +58,7 @@ const Center = () => {
       </li>
       <li className={classes.gamingInmenu}>
         <Link to='/gaming' className={classes.navbarLink}>
-          <i className='fas fa-dice-four' data-testid='gaming-icon'></i>
+          <i className='fas fa-dice-four' data-testid='gaming-icon' />
         </Link>
       </li>
     </ul>
@@ -89,40 +88,31 @@ const Right = props => {
             </button>
           </Link>
         </li>
-        <li>
-          <button
-            name='messenger'
-            data-testid='messenger-btn'
-            className={`${classes.messengerBtn} btn`}
-          >
-            <i className='fab fa-facebook-messenger'></i>
-          </button>
+        <li
+          name='messenger'
+          data-testid='messenger-btn'
+          className={`${classes.btn}`}
+        >
+          <i className='fab fa-facebook-messenger'></i>
         </li>
-        <li>
-          <button
-            name='notification'
-            data-testid='notification-btn'
-            className={`${classes.notificationBtn} btn`}
-          >
-            <i className='fas fa-bell' />
-          </button>
+        <li
+          name='notification'
+          data-testid='notification-btn'
+          className={`${classes.btn}`}
+        >
+          <i className='fas fa-bell' />
         </li>
-        <li>
-          <button
-            name='more'
-            data-testid='dropdown-btn'
-            className={`${classes.dropdownBtn} btn`}
-          >
-            <i className='fas fa-caret-down'></i>
-          </button>
+        <li name='more' data-testid='dropdown-btn' className={`${classes.btn}`}>
+          <i className='fas fa-caret-down'></i>
         </li>
-        <li className={classes.restInmenu}>
+        <li className={`${classes.restInmenu}`}>
           <i className='fas fa-bars' data-testid='rest-icon'></i>
         </li>
       </ul>
     )
   );
 };
+
 const Navbar = props => {
   const [user, setUser] = useState(props.currentUser);
   const [search, setSearch] = useState('');
@@ -146,7 +136,7 @@ const Navbar = props => {
 };
 
 Navbar.propTypes = {
-  user: PropTypes.object.isRequired,
+  currentUser: PropTypes.object.isRequired,
 };
 const mapStateToProps = state => ({
   currentUser: state.post_reducer.currentUser,

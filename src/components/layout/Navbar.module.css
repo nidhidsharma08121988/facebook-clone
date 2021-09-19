@@ -48,7 +48,6 @@
 
 .right {
   font-size: 20px;
-  align-items: center;
 }
 
 /* -------left side of navbar------ */
@@ -126,7 +125,10 @@ li i.brandIconStyle {
   margin: 0px;
 }
 
-.restInmenu,
+.right li.restInmenu {
+  display: none;
+}
+
 .homeInmenu,
 .friendsInmenu,
 .watchInmenu,
@@ -142,10 +144,6 @@ li i.brandIconStyle {
   color: var(--grey);
 }
 
-li.restInmenu {
-  display: none;
-}
-
 .homeInmenu:hover,
 .friendsInmenu:hover,
 .watchInmenu:hover,
@@ -157,6 +155,25 @@ li.restInmenu:hover {
 
 /* ----right---- */
 
+.right ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.right ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+}
+.right i {
+  align-self: center;
+  justify-self: center;
+}
 .profileBtn {
   display: flex;
   justify-content: flex-start;
@@ -175,29 +192,35 @@ li.restInmenu:hover {
   overflow: hidden;
   transition: all 0.3s ease-in;
 }
+
 .profileBtn:hover {
   background-color: var(--lighter-grey);
 }
+
 .profileBtnImg {
   width: 28px;
   height: 28px;
   border-radius: 50%;
   overflow: hidden;
 }
-.menuBtn,
-.messengerBtn,
-.notificationBtn,
-.dropdownBtn {
+
+.btn,
+.restInmenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: all 0.2s ease-in;
   border-radius: 50%;
-  width: var(--width-height-menu-btn);
-  height: var(--width-height-menu-btn);
+  width: 40px;
+  height: 40px;
   font-size: var(--font-size-menu-btn);
+  background-color: var(--lighter-grey);
+  cursor: pointer;
 }
-.menuBtn:hover,
-.messengerBtn:hover,
-.notificationBtn:hover,
-.dropdownBtn:hover {
+
+.btn:hover,
+.restInmenu:hover {
   filter: brightness(0.9);
 }
 
@@ -220,6 +243,21 @@ li.restInmenu:hover {
     display: none;
   }
 
+  .right li.restInmenu {
+    width: 60%;
+    height: 90%;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    border-radius: var(--border-radius-nav-center);
+    color: var(--grey);
+    align-self: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .right li {
     display: none;
   }
@@ -274,16 +312,8 @@ li.restInmenu:hover {
 
   .right {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     height: 100%;
-  }
-
-  .right li.restInmenu {
-    align-self: center;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 }

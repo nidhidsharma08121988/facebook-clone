@@ -1,0 +1,21 @@
+.visibilityContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  border-radius: var(--border-radius-search);
+}
+.selectedOption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.1rem;
+  background-color: var(--lighter-grey);
+  border-radius: 5px;
+}
+i {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}

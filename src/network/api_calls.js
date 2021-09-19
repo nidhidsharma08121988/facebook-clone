@@ -1,6 +1,17 @@
 import axios from 'axios';
 const api = 'http://localhost:5000';
 
+export const addPost = async post => {
+  try {
+    const res = await axios.post(`${api}/posts`, post, {
+      headers: {
+        'content-type': 'application/json',
+      },
+    });
+    const data = res.data;
+    return data;
+  } catch (error) {}
+};
 export const loadUser = async id => {
   try {
     const res = await axios.get(`${api}/users`);

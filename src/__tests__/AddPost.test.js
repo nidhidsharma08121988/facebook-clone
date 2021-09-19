@@ -5,6 +5,9 @@ describe('AddPost:', () => {
   beforeEach(() => {
     render(<AddPost />);
   });
+  it('should have user image and name along with drop down to select visibility', () => {
+    expect(screen.queryByTestId('user-visibility')).toBeVisible();
+  });
   it('should have textarea to input the post', () => {
     expect(screen.queryByTestId('input-post')).toBeVisible();
   });
