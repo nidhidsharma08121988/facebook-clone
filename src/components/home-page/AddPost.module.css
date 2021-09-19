@@ -18,6 +18,7 @@
   justify-content: top;
   align-self: center;
   align-items: flex-start;
+  margin-bottom: 1rem;
 }
 .userImage {
   width: 40px;
@@ -31,6 +32,25 @@
   flex-direction: column;
   width: 50%;
   align-items: flex-start;
+  justify-content: top;
+  align-self: top;
+}
+
+.postTextContainer {
+  width: 100%;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+textarea {
+  font-size: 1rem;
+  resize: none;
+  overflow: auto;
+  width: 95%;
   align-self: center;
+  min-height: 70px;
+  outline: none;
+  border: none;
 }

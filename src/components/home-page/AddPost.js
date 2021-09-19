@@ -18,6 +18,13 @@ const AddPost = props => {
           <Visibility />
         </div>
       </div>
+      <div className={classes.postTextContainer}>
+        <textarea
+          placeholder={`What's on your mind, ${
+            user.userName && user.userName
+          }?`}
+        />
+      </div>
     </div>
   );
 };

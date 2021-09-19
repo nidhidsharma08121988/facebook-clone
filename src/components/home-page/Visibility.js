@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classes from './Visibility.module.css';
+
 const Visibility = () => {
   const visibilityType = {
     public: 'Public',
@@ -31,16 +32,26 @@ const Visibility = () => {
     },
   ];
   const [visibility, setVisibility] = useState(visibilityList[0]);
-
+  const [showDropDown, setShowDropDown] = useState(false);
+  const toggleDiv = () => setShowDropDown(!showDropDown);
   return (
     <div className={classes.visibilityContainer}>
-      <div className={classes.selectedOption}>
+      <div className={classes.selectedOption} onClick={toggleDiv}>
         <i className={visibility.icon} />
         <span>{visibilityType[visibility.id]}</span>
-        <i class='fa fa-angle-down'></i>
+        <i
+          className={showDropDown ? `fas fa-angle-up` : `fas fa-angle-down`}
+        ></i>
       </div>
-      <div>
-        <ul></ul>
+      <div className={showDropDown ? classes.show : classes.hide}>
+        <p>
+          <strong>Who can see your post?</strong>
+        </p>
+        <ul>
+          {visibilityList.map((item, index) => (
+            <li key={index}>{visibilityType[item.id]}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
