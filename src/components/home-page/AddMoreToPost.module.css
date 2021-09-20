@@ -1,0 +1,22 @@
+.addMoreToPost {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+  z-index: 0;
+}
+.moreIconItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--grey);
+  transition: all 0.3s ease-in;
+}
+.moreIconItem:hover {
+  filter: brightness(0.6);
+}

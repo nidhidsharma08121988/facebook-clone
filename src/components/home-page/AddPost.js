@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import AddMoreToPost from './AddMoreToPost';
 import classes from './AddPost.module.css';
 import Visibility from './Visibility';
 
@@ -20,10 +21,14 @@ const AddPost = props => {
       </div>
       <div className={classes.postTextContainer}>
         <textarea
+          data-testid='input-post'
           placeholder={`What's on your mind, ${
             user.userName && user.userName
           }?`}
         />
+      </div>
+      <div className={classes.addMoreToPostContainer}>
+        <AddMoreToPost />
       </div>
     </div>
   );

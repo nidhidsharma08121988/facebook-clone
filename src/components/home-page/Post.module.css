@@ -64,10 +64,10 @@
   margin: 0.7rem;
   align-self: center;
 }
-.icon {
+.likeCommentShare .icon {
   color: var(--grey);
   cursor: pointer;
 }
-span {
+.likeCommentShare span {
   margin-left: 0.3rem;
 }
