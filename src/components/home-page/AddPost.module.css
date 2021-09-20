@@ -1,5 +1,6 @@
 .addPostContainer {
   width: 90%;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: top;
@@ -50,7 +51,7 @@ textarea {
   overflow: auto;
   width: 95%;
   align-self: center;
-  min-height: 70px;
+  min-height: 50%;
   outline: none;
   border: none;
 }

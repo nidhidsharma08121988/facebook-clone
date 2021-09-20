@@ -49,7 +49,10 @@ const Visibility = () => {
         </p>
         <ul>
           {visibilityList.map((item, index) => (
-            <li key={index}>{visibilityType[item.id]}</li>
+            <li key={index}>
+              <i className={item.icon} />
+              <span>{visibilityType[item.id]}</span>
+            </li>
           ))}
         </ul>
       </div>

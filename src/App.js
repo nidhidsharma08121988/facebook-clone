@@ -15,18 +15,20 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <header>
-          <Navbar />
-        </header>
-        <div className='routes-container'>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/friends' component={FriendsPage} />
-            <Route exact path='/watch' component={WatchPage} />
-            <Route exact path='/market-place' component={MarketPlacePage} />
-            <Route exact path='/gaming' component={GamingPage} />
-            <Route exact path='/profile' component={ProfilePage} />
-          </Switch>
+        <div className='app-container'>
+          <header>
+            <Navbar />
+          </header>
+          <div className='routes-container'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/friends' component={FriendsPage} />
+              <Route exact path='/watch' component={WatchPage} />
+              <Route exact path='/market-place' component={MarketPlacePage} />
+              <Route exact path='/gaming' component={GamingPage} />
+              <Route exact path='/profile' component={ProfilePage} />
+            </Switch>
+          </div>
         </div>
       </Router>
     </Provider>
