@@ -2,16 +2,26 @@ import axios from 'axios';
 const api = 'http://localhost:5000';
 
 export const addPost = async post => {
+  const url = `${api}/posts`;
+  const method = 'POST';
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+  const body = JSON.stringify(post);
+
   try {
-    const res = await axios.post(`${api}/posts`, post, {
-      headers: {
-        'content-type': 'application/json',
-      },
+    const res = await fetch(url, {
+      method: method,
+      headers: headers,
+      body: body,
     });
-    const data = res.data;
+    const data = await res.json();
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
+
 export const loadUser = async id => {
   try {
     const res = await axios.get(`${api}/users`);

@@ -4,27 +4,39 @@
       "userId": "1",
       "userName": "Nidhi Sharma",
       "userImg": "https://via.placeholder.com/300",
-      "friends": ["2", "3"]
+      "friends": [
+        "2",
+        "3"
+      ]
     },
     {
       "userId": "2",
       "userName": "Pankaj Sharma",
-      "friends": ["1", "3"],
+      "friends": [
+        "1",
+        "3"
+      ],
       "userImg": "https://via.placeholder.com/300"
     },
     {
       "userId": "3",
       "userName": "Pahi Sharma",
       "userImg": "https://via.placeholder.com/300",
-      "friends": ["2", "1"]
+      "friends": [
+        "2",
+        "1"
+      ]
     }
   ],
   "posts": [
     {
+      "id": "11",
       "user": "1",
       "postId": "11",
       "text": "do re mi fa so la te",
-      "imageSrc": ["https://via.placeholder.com/300"],
+      "imageSrc": [
+        "https://via.placeholder.com/300"
+      ],
       "videoSrc": [],
       "comments": [
         {
@@ -48,15 +60,19 @@
       ]
     },
     {
+      "id": "21",
       "user": "1",
       "postId": "21",
       "text": "hello",
-      "imageSrc": ["https://via.placeholder.com/300"],
+      "imageSrc": [
+        "https://via.placeholder.com/300"
+      ],
       "videoSrc": [],
       "comments": [],
       "likes": []
     },
     {
+      "id": "31",
       "user": "3",
       "postId": "31",
       "text": "post",
@@ -75,6 +91,7 @@
       "likes": []
     },
     {
+      "id": "41",
       "user": "2",
       "postId": "41",
       "text": "post1",
@@ -90,6 +107,26 @@
           "text": "Wow"
         }
       ]
+    },
+    {
+      "user": "1",
+      "postId": 568,
+      "text": "good bye",
+      "imageSrc": [],
+      "videoSrc": [],
+      "comments": [],
+      "likes": [],
+      "id": "lGOA67E"
+    },
+    {
+      "user": "1",
+      "postId": 184,
+      "text": "see you",
+      "imageSrc": [],
+      "videoSrc": [],
+      "comments": [],
+      "likes": [],
+      "id": "GRNKGYM"
     }
   ]
 }

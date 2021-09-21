@@ -30,7 +30,7 @@ const AddMoreToPost = () => {
   ];
   return (
     <>
-      <ul className={classes.addMoreToPost}>
+      <ul className={classes.addMoreToPost} data-testid='add-to-post-area'>
         {addMoreItemsList.map((item, index) => (
           <li key={index} className={classes.moreIconItem}>
             <i className={item.icon}></i>

@@ -41,6 +41,9 @@ describe('Post Feature', () => {
     );
   });
 
+  afterEach(() => {
+    clearTimeout();
+  });
   test('Should display posts on load', () => {
     setTimeout(() => {
       expect(screen.getByText(/hello/gi)).toBeVisible();
@@ -48,13 +51,13 @@ describe('Post Feature', () => {
   });
 
   test('Should add the post and display it when post is created', () => {
-    const createPostArea = screen.getByTestId('new-post-area');
+    const createPostArea = screen.getByTestId('input-post');
     const input = 'This is my post';
     userEvent.type(createPostArea, input);
     const addPostBtn = screen.getByTestId('add-post-btn');
     fireEvent.click(addPostBtn);
     setTimeout(() => {
       expect(screen.getByText(input)).toBeVisible();
-    });
+    }, 1000);
   });
 });
