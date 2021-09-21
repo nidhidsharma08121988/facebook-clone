@@ -1,7 +1,5 @@
 .addPostContainer {
   width: 90%;
-  min-height: 40%;
-  display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: flex-start;
@@ -12,14 +10,40 @@
   padding: 0.5rem;
   border-radius: 5px;
 }
-.userVisibilityImage {
+.topMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  height: 40%;
+  padding: 0.2rem;
+}
+.rightPostMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 100%;
+}
+.cancelPost {
+  height: 100%;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  margin-right: 0.2rem;
+  cursor: pointer;
+  color: maroon;
+}
+
+.userVisibilityImage {
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: top;
   align-self: center;
   align-items: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
+  height: 100%;
 }
 .userImage {
   width: 40px;
@@ -32,6 +56,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  max-height: 100%;
   align-items: flex-start;
   justify-content: top;
   align-self: top;
@@ -40,28 +65,44 @@
 .postTextContainer {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 0.5rem;
+  align-self: center;
+  margin: 0.5rem 0;
   min-height: 30%;
 }
 
-.addPostContainer textarea {
+.textAreaContainer {
+  display: flex;
+  width: 90%;
   font-size: 1rem;
+}
+.addPostContainer textarea {
   resize: none;
   overflow: auto;
-  width: 95%;
-  align-self: center;
+  width: 100%;
+  align-self: flex-start;
   outline: none;
-  border: none;
+  padding: 0.2rem 0.6rem;
+  border: 0.8px solid var(--lightest-gey-4);
+  border-radius: var(--border-radius-search);
 }
-
+.postIcon {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: steelblue;
+  transform: rotate(50deg);
+  cursor: pointer;
+}
 .addMoreToPostContainer {
   width: 100%;
   display: flex;
   align-items: center;
-  border: 0.7px solid var(--lightest-gey-4);
   border-radius: 5px;
   padding: 0px;
-  margin-top: 0.7rem;
+  margin-top: 0.4rem;
 }

@@ -5,9 +5,9 @@
   justify-content: space-around;
   align-items: center;
   position: relative;
-  margin-top: 1rem;
   width: 100%;
   z-index: 0;
+  margin: 0.1rem 0;
 }
 .moreIconItem {
   display: flex;
@@ -18,5 +18,6 @@
   transition: all 0.3s ease-in;
 }
 .moreIconItem:hover {
-  filter: brightness(0.6);
+  filter: brightness(0.9);
+  color: steelblue;
 }
