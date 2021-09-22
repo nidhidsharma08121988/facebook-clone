@@ -2,14 +2,21 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Navbar from '../components/layout/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
+import rootReducer from '../redux-store/reducers';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 
 describe('App', () => {
   // in cypress we use cy.visit() localhost
   beforeEach(() => {
+    const store = createStore(rootReducer, {}, applyMiddleware(thunk));
     render(
-      <Router>
-        <Navbar />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Navbar />
+        </Router>
+      </Provider>
     );
   });
 

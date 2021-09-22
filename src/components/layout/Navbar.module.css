@@ -21,9 +21,19 @@
 }
 
 .navbarLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   text-decoration-color: none;
   color: var(--grey);
+  border-radius: var(--border-radius-nav-center);
+  height: 90%;
+  width: 100%;
+}
+.navbarLink:hover {
+  background-color: var(--lighter-grey);
 }
 
 .navbar ul {
@@ -125,6 +135,14 @@ li i.brandIconStyle {
   margin: 0px;
 }
 
+/* highlight selected menu list item and menu icon */
+.iconBlue {
+  color: steelblue;
+}
+.listBlue {
+  border-bottom: 3px solid steelblue;
+}
+
 .right li.restInmenu {
   display: none;
 }
@@ -135,22 +153,12 @@ li i.brandIconStyle {
 .marketInmenu,
 .gamingInmenu {
   width: 100%;
-  height: 90%;
+  height: 100%;
   font-size: 1em;
   cursor: pointer;
   padding: 0.3rem;
   margin: 0px;
-  border-radius: var(--border-radius-nav-center);
   color: var(--grey);
-}
-
-.homeInmenu:hover,
-.friendsInmenu:hover,
-.watchInmenu:hover,
-.marketInmenu:hover,
-.gamingInmenu:hover,
-li.restInmenu:hover {
-  background-color: var(--lighter-grey);
 }
 
 /* ----right---- */

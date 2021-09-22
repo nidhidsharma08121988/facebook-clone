@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classes from './Navbar.module.css';
+import { pageTypes } from '../../redux-store/actions/types';
 
 const Left = props => {
   const { search, set } = props;
@@ -33,32 +34,78 @@ const Left = props => {
   );
 };
 
-const Center = () => {
+const Center = props => {
+  const { currentPage } = props;
   return (
     <ul className={classes.center}>
-      <li className={classes.homeInmenu}>
+      <li
+        className={`${classes.homeInmenu} ${
+          currentPage === pageTypes.HOME && classes.listBlue
+        }`}
+      >
         <Link to='/' className={classes.navbarLink}>
-          <i className='fa fa-home' data-testid='home-icon' />
+          <i
+            className={`fa fa-home ${
+              currentPage === pageTypes.HOME && classes.iconBlue
+            }`}
+            data-testid='home-icon'
+          />
         </Link>
       </li>
-      <li className={classes.friendsInmenu}>
+      <li
+        className={`${classes.friendsInmenu} ${
+          currentPage === pageTypes.FRIENDS && classes.listBlue
+        }`}
+      >
         <Link to='/friends' className={classes.navbarLink}>
-          <i className='fas fa-user-friends' data-testid='friends-icon' />
+          <i
+            className={`fas fa-user-friends  ${
+              currentPage === pageTypes.FRIENDS && classes.iconBlue
+            }`}
+            data-testid='friends-icon'
+          />
         </Link>
       </li>
-      <li className={classes.watchInmenu}>
+      <li
+        className={`${classes.watchInmenu} ${
+          currentPage === pageTypes.WATCH && classes.listBlue
+        }`}
+      >
         <Link to='/watch' className={classes.navbarLink}>
-          <i className='fas fa-video' data-testid='watch-icon' />
+          <i
+            className={`fas fa-video ${
+              currentPage === pageTypes.WATCH && classes.iconBlue
+            }`}
+            data-testid='watch-icon'
+          />
         </Link>
       </li>
-      <li className={classes.marketInmenu}>
+      <li
+        className={`${classes.marketInmenu} ${
+          currentPage === pageTypes.MARKET && classes.listBlue
+        }`}
+      >
         <Link to='/market-place' className={classes.navbarLink}>
-          <i className='fas fa-store' data-testid='market-icon' />
+          <i
+            className={`fas fa-store ${
+              currentPage === pageTypes.MARKET && classes.iconBlue
+            }`}
+            data-testid='market-icon'
+          />
         </Link>
       </li>
-      <li className={classes.gamingInmenu}>
+      <li
+        className={`${classes.gamingInmenu}  ${
+          currentPage === pageTypes.GAMING && classes.listBlue
+        }`}
+      >
         <Link to='/gaming' className={classes.navbarLink}>
-          <i className='fas fa-dice-four' data-testid='gaming-icon' />
+          <i
+            className={`fas fa-dice-four  ${
+              currentPage === pageTypes.GAMING && classes.iconBlue
+            }`}
+            data-testid='gaming-icon'
+          />
         </Link>
       </li>
     </ul>
@@ -115,10 +162,18 @@ const Right = props => {
 
 const Navbar = props => {
   const [user, setUser] = useState(props.currentUser);
+  const [currentPage, setCurrentPage] = useState(props.currentPage);
   const [search, setSearch] = useState('');
   useEffect(() => {
-    setUser(props.currentUser);
-  }, [props.currentUser]);
+    if (user !== props.currentUser) {
+      setUser(props.currentUser);
+    }
+
+    if (currentPage !== props.currentPage) {
+      setCurrentPage(props.currentPage);
+    }
+    //eslint-disable-next-line
+  }, [props.currentUser, props.currentPage]);
 
   return (
     <div className={classes.navbar}>
@@ -126,7 +181,7 @@ const Navbar = props => {
         <Left search={search} set={setSearch} />
       </>
       <>
-        <Center />
+        <Center currentPage={currentPage} />
       </>
       <>
         <Right user={user} />
@@ -137,8 +192,11 @@ const Navbar = props => {
 
 Navbar.propTypes = {
   currentUser: PropTypes.object.isRequired,
+  currentPage: PropTypes.string.isRequired,
 };
+
 const mapStateToProps = state => ({
   currentUser: state.post_reducer.currentUser,
+  currentPage: state.post_reducer.currentPage,
 });
 export default connect(mapStateToProps, {})(Navbar);

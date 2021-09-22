@@ -1,5 +1,12 @@
 import { loadUser, loadPosts, addPost } from '../../network/api_calls';
-import { ADD_POST, LOAD_POSTS, LOAD_USER } from './types.js';
+import { ADD_POST, LOAD_POSTS, LOAD_USER, SETCURRENTPAGE } from './types.js';
+
+export const setCurrentPage = pageType => async dispatch => {
+  dispatch({
+    type: SETCURRENTPAGE,
+    payload: pageType,
+  });
+};
 
 export const addPostAction = post => async dispatch => {
   const data = await addPost(post);
