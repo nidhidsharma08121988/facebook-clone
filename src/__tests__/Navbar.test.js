@@ -54,10 +54,6 @@ describe('App', () => {
     expect(screen.getByTestId('profile-btn')).toBeVisible();
   });
 
-  it('should have menu button', () => {
-    expect(screen.getByTestId('menu-btn')).toBeVisible();
-  });
-
   it('should have messenger button', () => {
     expect(screen.getByTestId('messenger-btn')).toBeVisible();
   });
