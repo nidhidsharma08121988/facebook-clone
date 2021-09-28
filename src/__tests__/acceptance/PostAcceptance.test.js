@@ -46,7 +46,6 @@ describe('Post Feature', () => {
   });
 
   test('Should display posts on load', async () => {
-    setTimeout(() => {}, 1000);
     expect(screen.getByText('hello')).toBeVisible();
   });
 
@@ -56,16 +55,13 @@ describe('Post Feature', () => {
     userEvent.type(createPostArea, input);
     const addPostBtn = screen.getByTestId('add-post-btn');
     fireEvent.click(addPostBtn);
-    setTimeout(() => {}, 1000);
     expect(screen.getByText(input)).toBeVisible();
   });
 
   test('should have edit and delete option when ellipsis icon is clicked of a post', () => {
-    setTimeout(() => {
-      const postContainers = screen.getAllByTestId('post-container');
-      expect(postContainers.length).toBe(2);
-      expect(screen.getByRole('list')).toContain('Edit');
-      expect(screen.getAllByRole('list')).toContain('Delete');
-    }, 1000);
+    const postContainers = screen.getAllByTestId('post-container');
+    expect(postContainers.length).toBe(2);
+    expect(screen.getByRole('list')).toContain('Edit');
+    expect(screen.getAllByRole('list')).toContain('Delete');
   });
 });
