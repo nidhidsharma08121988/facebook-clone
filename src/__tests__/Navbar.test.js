@@ -43,7 +43,6 @@ describe('App', () => {
 
   it('should have marketplace icon', () => {
     expect(screen.getByTestId('market-icon')).toBeVisible();
-    // in cypress: cy.get('[data-testid="market-icon"]').should('be.visible', true);
   });
 
   it('should have gaming icon', () => {

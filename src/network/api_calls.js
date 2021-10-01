@@ -25,12 +25,13 @@ export const loadUser = async id => {
   try {
     const res = await axios.get(`${api}/users`);
     const data = res.data;
-    const user = data.filter(user => user.userId === id);
-    return user[0];
+    const users = data.filter(user => user.userId === id);
+    const user = users[0];
+    return user;
   } catch (error) {
     console.log(error);
+    return {};
   }
-  return {};
 };
 
 export const loadPosts = async userId => {
@@ -41,8 +42,8 @@ export const loadPosts = async userId => {
     return posts;
   } catch (error) {
     console.log(error);
+    return [];
   }
-  return [];
 };
 
 export const getUser = async id => {
@@ -54,5 +55,6 @@ export const getUser = async id => {
     return user;
   } catch (error) {
     console.log(error);
+    return {};
   }
 };

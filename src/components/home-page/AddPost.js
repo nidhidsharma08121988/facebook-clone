@@ -79,7 +79,6 @@ const AddPost = props => {
       <TopMenu user={user} cancelPost={cancelPost} />
       <PostTextContainer
         user={user}
-        post={myPost}
         setPostText={setPostText}
         addPost={addPost}
       />
@@ -96,7 +95,7 @@ const TopMenu = props => {
     user && (
       <div className={classes.topMenu}>
         <div
-          data-test='user-visibility'
+          data-testid='user-visibility'
           className={classes.userVisibilityImage}
         >
           <img src={user.userImg} alt='user' className={classes.userImage} />
@@ -120,7 +119,7 @@ const TopMenu = props => {
 };
 
 const PostTextContainer = props => {
-  const { user, myPost, setPostText, addPost } = props;
+  const { user, setPostText, addPost } = props;
   const [text, setText] = useState('');
   const addThePost = () => {
     setPostText(text);

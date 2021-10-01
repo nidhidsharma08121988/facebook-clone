@@ -28,28 +28,20 @@ describe('AddPost:', () => {
       </Provider>
     );
   });
-  afterEach(() => {
-    clearTimeout();
-  });
+
   it('should have user image and name along with drop down to select visibility', () => {
-    setTimeout(() => {
-      expect(screen.queryByTestId('user-visibility')).toBeVisible();
-    }, 1000);
+    expect(screen.queryByTestId('user-visibility')).toBeVisible();
   });
+
   it('should have textarea to input the post', () => {
-    setTimeout(() => {
-      expect(screen.queryByTestId('input-post')).toBeVisible();
-    }, 1000);
+    expect(screen.queryByTestId('input-post')).toBeVisible();
   });
   it('should have button to input the post', () => {
-    setTimeout(() => {
-      expect(screen.queryByTestId('submit-post')).toBeVisible();
-    });
+    expect(screen.queryByTestId('submit-post')).toBeVisible();
   });
+
   it('should have icons to add image, tag, location, feeling and more icon', () => {
-    setTimeout(() => {
-      expect(screen.queryByTestId('add-to-post-area')).toBeVisible();
-    });
+    expect(screen.queryByTestId('add-to-post-area')).toBeVisible();
   });
 
   it('should cancel adding post if cancel', () => {
@@ -58,8 +50,6 @@ describe('AddPost:', () => {
     userEvent.type(createPostArea, input);
     const deleteBtn = screen.getByTestId('cancel-post');
     fireEvent.click(deleteBtn);
-    setTimeout(() => {
-      expect(createPostArea.target.value).toBe('');
-    }, 1000);
+    expect(createPostArea.target.value).toBe('');
   });
 });

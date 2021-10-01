@@ -43,32 +43,20 @@ describe('Post', () => {
     render(<Post post={post} />);
   });
 
-  afterEach(() => {
-    clearTimeout();
-  });
-
   it('should display username of the author image and name', () => {
-    setTimeout(() => {
-      expect(screen.queryByTestId('post-user-image')).toBeVisible();
-      expect(screen.queryByTestId('username')).toBeVisible();
-    }, 1000);
+    expect(screen.queryByTestId('post-user-image')).toBeVisible();
+    expect(screen.queryByTestId('username')).toBeVisible();
   });
 
   it('should display post', () => {
-    setTimeout(() => {
-      expect(screen.queryByTestId('post-content')).toBeVisible();
-    }, 1000);
+    expect(screen.queryByTestId('post-content')).toBeVisible();
   });
   it('should display number of likes', () => {
-    setTimeout(() => {
-      expect(screen.queryByTestId('likes-number')).toBeVisible();
-    }, 1000);
+    expect(screen.queryByTestId('likes-number')).toBeVisible();
   });
 
   it('should display number of comments', () => {
-    setTimeout(() => {
-      expect(screen.queryByTestId('comments-number')).toBeVisible();
-    }, 1000);
+    expect(screen.queryByTestId('comments-number')).toBeVisible();
   });
 
   it('should display share option', () => {
