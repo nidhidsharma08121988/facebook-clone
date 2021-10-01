@@ -10,30 +10,34 @@ import axios from 'axios';
 
 jest.mock('axios');
 
+const getPosts = () => [
+  {
+    user: '1',
+    postId: '11',
+    text: 'hello',
+  },
+];
+
+const getUser = () => ({
+  userId: '1',
+  userName: 'Nidhi',
+  userImage: 'https://via.placeholder.com/300/09f/fff.png',
+  friends: ['2', '3'],
+});
+
 describe('Post Feature', () => {
   beforeEach(() => {
-    const res = {
-      currentUser: {
-        userId: '1',
-        userName: 'Nidhi',
-        userImage: 'https://via.placeholder.com/300/09f/fff.png',
-        friends: ['2', '3'],
-      },
-      posts: [
-        {
-          user: '1',
-          postId: '11',
-          text: 'hello',
-        },
-        {
-          user: '3',
-          postId: '31',
-          text: 'post',
-        },
-      ],
-    };
-    axios.get.mockResolvedValue(res);
-    const store = createStore(rootReducer, res, applyMiddleware(thunk));
+    const store = createStore(rootReducer, {}, applyMiddleware(thunk));
+
+    jest.spyOn(axios, 'get').mockImplementation(url => {
+      const api = 'http://localhost:5000';
+      if (url === `${api}/posts`) {
+        return getPosts();
+      } else {
+        return getUser();
+      }
+    });
+
     render(
       <Provider store={store}>
         <App />
@@ -46,7 +50,9 @@ describe('Post Feature', () => {
   });
 
   test('Should display posts on load', async () => {
-    expect(screen.getByText('hello')).toBeVisible();
+    await waitFor(() => {
+      expect(screen.queryAllByTestId('post-container').length).toBe(1);
+    });
   });
 
   test('Should add the post and display it when post is created', () => {

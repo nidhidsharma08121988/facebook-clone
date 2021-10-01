@@ -2,14 +2,13 @@ import axios from 'axios';
 const api = 'http://localhost:5000';
 
 export const addPost = async post => {
-  const url = `${api}/posts`;
-  const method = 'POST';
-  const headers = {
-    'Content-Type': 'application/json',
-  };
-  const body = JSON.stringify(post);
-
   try {
+    const url = `${api}/posts`;
+    const method = 'POST';
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+    const body = JSON.stringify(post);
     const res = await fetch(url, {
       method: method,
       headers: headers,

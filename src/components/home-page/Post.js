@@ -4,11 +4,39 @@ import PropTypes from 'prop-types';
 import { getUser } from '../../network/api_calls';
 import { useEffect } from 'react';
 
+export const Post = props => {
+  useEffect(() => {
+    try {
+      setPost(props.post);
+      getUser(props.post.user).then(res => setUser(res));
+    } catch (error) {
+      console.log(error);
+    }
+    //eslint-disable-next-line
+  }, [props.post]);
+
+  const [user, setUser] = useState({});
+  const [post, setPost] = useState({});
+
+  return user === {} ||
+    post === {} ||
+    post === undefined ||
+    user === undefined ? (
+    'No Post'
+  ) : (
+    <DisplayPost user={user} post={post} />
+  );
+};
+
+Post.propTypes = {
+  post: PropTypes.object.isRequired,
+};
+
 const DisplayPost = props => {
   const { user, post } = props;
   return user && post ? (
     <div className={classes.displayPost}>
-      <Top user={user} />
+      <TopMenu user={user} />
       <ThePost post={post} />
       <DisplayCommentLikes post={post} />
     </div>
@@ -16,7 +44,8 @@ const DisplayPost = props => {
     'Nothing to display'
   );
 };
-const Top = props => {
+
+const TopMenu = props => {
   const { user } = props;
 
   return user !== {} && user !== undefined ? (
@@ -35,9 +64,10 @@ const Top = props => {
       </div>
     </div>
   ) : (
-    'Nothing to show'
+    'Nothing to Display'
   );
 };
+
 const ThePost = props => {
   const { post } = props;
   return (
@@ -75,33 +105,6 @@ const DisplayCommentLikes = props => {
       </div>
     )
   );
-};
-export const Post = props => {
-  useEffect(() => {
-    try {
-      setPost(props.post);
-      getUser(props.post.user).then(res => setUser(res));
-    } catch (error) {
-      console.log(error);
-    }
-    //eslint-disable-next-line
-  }, [props.post]);
-
-  const [user, setUser] = useState({});
-  const [post, setPost] = useState({});
-
-  return user === {} ||
-    post === {} ||
-    post === undefined ||
-    user === undefined ? (
-    'No Post'
-  ) : (
-    <DisplayPost user={user} post={post} />
-  );
-};
-
-Post.propTypes = {
-  post: PropTypes.object.isRequired,
 };
 
 export default Post;
