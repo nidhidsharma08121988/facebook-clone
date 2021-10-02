@@ -1,6 +1,6 @@
-import Posts from './Posts';
+import Posts from '../posts/Posts';
 import classes from './HomeCenter.module.css';
-import AddPost from './AddPost';
+import AddPost from '../new-post/AddPost';
 
 const HomeCenter = props => {
   return (

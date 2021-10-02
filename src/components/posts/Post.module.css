@@ -10,42 +10,6 @@
   align-items: flex-start;
   width: 100%;
 }
-.top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.nameSection {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 60%;
-}
-.image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: 0.4rem;
-  display: inline;
-}
-.right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 0.5rem;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  transition: all 0.3s ease-in;
-}
-.more {
-  color: rgba(28, 30, 33, 1);
-  cursor: pointer;
-}
-.right:hover {
-  background-color: var(--lighter-grey);
-}
 .content {
   width: 100%;
   padding: 0.5rem;

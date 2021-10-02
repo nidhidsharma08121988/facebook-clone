@@ -1,0 +1,30 @@
+.userVisibilityImage {
+  width: 90%;
+  display: flex;
+  justify-content: top;
+  align-self: center;
+  align-items: flex-start;
+  margin-bottom: 0.2rem;
+}
+.usernamePicture {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+}
+.userVisibility {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-height: 100%;
+  align-items: flex-start;
+  justify-content: top;
+  align-self: top;
+  margin-left: -90px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .userVisibility {
+    margin-left: -70px;
+  }
+}

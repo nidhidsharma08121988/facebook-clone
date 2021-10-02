@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import AddMoreToPost from './AddMoreToPost';
 import classes from './AddPost.module.css';
-import Visibility from './Visibility';
+import PostTextContainer from './PostTextContainer';
 import { addPostAction } from '../../redux-store/actions/postActions';
 import PropTypes from 'prop-types';
+import NewPostMenu from './NewPostMenu';
 
 const AddPost = props => {
   const { addPostAction } = props;
@@ -35,39 +36,26 @@ const AddPost = props => {
     });
   };
 
-  const addPost = async () => {
+  const addPost = () => {
     try {
       const newPost = {
         ...myPost,
         user: '1',
         postId: Math.floor(Math.random() * 1000),
       };
-      addPostAction(newPost);
-      clearMyPost();
+
+      if (newPost.text !== '' && newPost.text) {
+        addPostAction(newPost);
+        clearMyPost();
+      }
     } catch (error) {
-      alert('Something went wrong');
-      setMyPost({
-        user: '',
-        postId: '',
-        text: '',
-        imageSrc: [],
-        videoSrc: [],
-        comments: [],
-        likes: [],
-      });
+      console.log(error);
+      clearMyPost();
     }
   };
 
   const cancelPost = () => {
-    setMyPost({
-      user: '',
-      postId: '',
-      text: '',
-      imageSrc: [],
-      videoSrc: [],
-      comments: [],
-      likes: [],
-    });
+    clearMyPost();
   };
 
   const setPostText = postText => {
@@ -94,67 +82,16 @@ const TopMenu = props => {
   return (
     user && (
       <div className={classes.topMenu}>
-        <div
-          data-testid='user-visibility'
-          className={classes.userVisibilityImage}
-        >
-          <img src={user.userImg} alt='user' className={classes.userImage} />
-          <div className={classes.userVisibility}>
-            <div>{user.userName}</div>
-            <Visibility />
-          </div>
-        </div>
+        <NewPostMenu user={user} />
         <div className={classes.rightPostMenu}>
           <i
             className={`fas fa-times ${classes.cancelPost}`}
             onClick={cancelPost}
             data-testid='cancel-post'
-          >
-            {' '}
-          </i>
+          ></i>
         </div>
       </div>
     )
-  );
-};
-
-const PostTextContainer = props => {
-  const { user, setPostText, addPost } = props;
-  const [text, setText] = useState('');
-  const addThePost = () => {
-    setPostText(text);
-    addPost();
-  };
-  return user ? (
-    <div className={classes.postTextContainer}>
-      <div className={classes.textAreaContainer}>
-        <textarea
-          data-testid='input-post'
-          placeholder={`What's on your mind, ${
-            user.userName && user.userName
-          }?`}
-          value={text}
-          onChange={e => setText(e.target.value)}
-        />
-      </div>
-      <div className={classes.postIcon} data-testid='submit-post'>
-        {text ? (
-          <i
-            className={`fas fa-location-arrow`}
-            onClick={addThePost}
-            data-testid='add-post-btn'
-          ></i>
-        ) : (
-          <i
-            className={`fas fa-location-arrow`}
-            style={{ color: 'grey' }}
-            data-testid='add-post-btn'
-          ></i>
-        )}
-      </div>
-    </div>
-  ) : (
-    ''
   );
 };
 

@@ -3,6 +3,7 @@ import classes from './Post.module.css';
 import PropTypes from 'prop-types';
 import { getUser } from '../../network/api_calls';
 import { useEffect } from 'react';
+import DisplayPostMenu from './DisplayPostMenu';
 
 export const Post = props => {
   useEffect(() => {
@@ -36,35 +37,12 @@ const DisplayPost = props => {
   const { user, post } = props;
   return user && post ? (
     <div className={classes.displayPost}>
-      <TopMenu user={user} />
+      <DisplayPostMenu user={user} />
       <ThePost post={post} />
       <DisplayCommentLikes post={post} />
     </div>
   ) : (
     'Nothing to display'
-  );
-};
-
-const TopMenu = props => {
-  const { user } = props;
-
-  return user !== {} && user !== undefined ? (
-    <div className={classes.top}>
-      <div className={classes.nameSection}>
-        <img
-          data-testid='post-user-image'
-          src={user.userImg}
-          alt='author'
-          className={classes.image}
-        />
-        <div data-testid='username'>{user.userName && user.userName}</div>
-      </div>
-      <div className={classes.right}>
-        <i className={`fas fa-ellipsis-h ${classes.more}`}></i>
-      </div>
-    </div>
-  ) : (
-    'Nothing to Display'
   );
 };
 
