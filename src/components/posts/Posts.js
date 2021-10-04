@@ -5,8 +5,8 @@ import Post from './Post';
 import classes from './Posts.module.css';
 
 const Posts = props => {
-  const hasPostsToDisplay = () => props.posts.length > 0;
-  const mapPostsAndDisplayPostComponent = () => {
+  const hasPosts = () => props.posts.length > 0;
+  const renderPosts = () => {
     return props.posts.map((post, index) => {
       return (
         <div
@@ -21,9 +21,7 @@ const Posts = props => {
   };
   return (
     <div className={classes.allPosts} data-testid='posts-container'>
-      {hasPostsToDisplay()
-        ? mapPostsAndDisplayPostComponent()
-        : 'No Posts to diplay'}
+      {hasPosts() ? renderPosts() : 'No Posts to diplay'}
     </div>
   );
 };
@@ -31,6 +29,7 @@ const Posts = props => {
 Posts.propTypes = {
   posts: PropTypes.array.isRequired,
 };
+
 const mapStateToProps = state => ({
   posts: state.post_reducer.posts,
 });
