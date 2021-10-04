@@ -6,16 +6,18 @@ import { pageTypes } from '../../redux-store/actions/types';
 export const CenterNavbar = props => {
   const { currentPage } = props;
 
+  const isCurrentPage = page => currentPage === page;
+
   const renderHomeIcon = () => (
     <li
       className={`${classes.homeInmenu} ${
-        currentPage === pageTypes.HOME && classes.listBlue
+        isCurrentPage(pageTypes.HOME) && classes.listBlue
       }`}
     >
       <Link to='/' className={classes.navbarLink}>
         <i
           className={`fa fa-home ${
-            currentPage === pageTypes.HOME && classes.iconBlue
+            isCurrentPage(pageTypes.HOME) && classes.iconBlue
           }`}
           data-testid='home-icon'
         />
@@ -26,13 +28,13 @@ export const CenterNavbar = props => {
   const renderFriendsIcon = () => (
     <li
       className={`${classes.friendsInmenu} ${
-        currentPage === pageTypes.FRIENDS && classes.listBlue
+        isCurrentPage(pageTypes.FRIENDS) && classes.listBlue
       }`}
     >
       <Link to='/friends' className={classes.navbarLink}>
         <i
           className={`fas fa-user-friends  ${
-            currentPage === pageTypes.FRIENDS && classes.iconBlue
+            isCurrentPage(pageTypes.FRIENDS) && classes.iconBlue
           }`}
           data-testid='friends-icon'
         />
@@ -43,13 +45,13 @@ export const CenterNavbar = props => {
   const renderWatchIcon = () => (
     <li
       className={`${classes.watchInmenu} ${
-        currentPage === pageTypes.WATCH && classes.listBlue
+        isCurrentPage(pageTypes.WATCH) && classes.listBlue
       }`}
     >
       <Link to='/watch' className={classes.navbarLink}>
         <i
           className={`fas fa-video ${
-            currentPage === pageTypes.WATCH && classes.iconBlue
+            isCurrentPage(pageTypes.WATCH) && classes.iconBlue
           }`}
           data-testid='watch-icon'
         />
@@ -60,13 +62,13 @@ export const CenterNavbar = props => {
   const renderMarketIcon = () => (
     <li
       className={`${classes.marketInmenu} ${
-        currentPage === pageTypes.MARKET && classes.listBlue
+        isCurrentPage(pageTypes.MARKET) && classes.listBlue
       }`}
     >
       <Link to='/market-place' className={classes.navbarLink}>
         <i
           className={`fas fa-store ${
-            currentPage === pageTypes.MARKET && classes.iconBlue
+            isCurrentPage(pageTypes.MARKET) && classes.iconBlue
           }`}
           data-testid='market-icon'
         />
@@ -77,13 +79,13 @@ export const CenterNavbar = props => {
   const renderGamingIcon = () => (
     <li
       className={`${classes.gamingInmenu}  ${
-        currentPage === pageTypes.GAMING && classes.listBlue
+        isCurrentPage(pageTypes.GAMING) && classes.listBlue
       }`}
     >
       <Link to='/gaming' className={classes.navbarLink}>
         <i
           className={`fas fa-dice-four  ${
-            currentPage === pageTypes.GAMING && classes.iconBlue
+            isCurrentPage(pageTypes.GAMING) && classes.iconBlue
           }`}
           data-testid='gaming-icon'
         />
