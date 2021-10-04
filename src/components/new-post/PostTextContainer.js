@@ -26,7 +26,7 @@ const PostTextContainer = props => {
   const disabledIcon = (
     <i
       className={`fas fa-location-arrow`}
-      style={{ color: 'grey', disabled: 'true' }}
+      style={{ color: 'grey', disabled: 'true', cursor: 'default' }}
       data-testid='add-post-btn'
     ></i>
   );
@@ -42,14 +42,16 @@ const PostTextContainer = props => {
     </div>
   );
 
-  const renderPostIcon = () => (text ? activeIcon : disabledIcon);
+  const renderPostIcon = () => (
+    <div className={classes.postIcon} data-testid='submit-post'>
+      {text ? activeIcon : disabledIcon}
+    </div>
+  );
 
   const renderAddPost = () => (
     <div className={classes.postTextContainer}>
       {renderTextArea()}
-      <div className={classes.postIcon} data-testid='submit-post'>
-        {renderPostIcon()}
-      </div>
+      {renderPostIcon()}
     </div>
   );
 
