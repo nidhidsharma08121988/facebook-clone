@@ -3,7 +3,7 @@ import classes from './Post.module.css';
 import PropTypes from 'prop-types';
 import { getUser } from '../../network/api_calls';
 import { useEffect } from 'react';
-import DisplayPostMenu from './DisplayPostMenu';
+import PostMenu from './PostMenu';
 
 export const Post = props => {
   useEffect(() => {
@@ -19,34 +19,29 @@ export const Post = props => {
   const [user, setUser] = useState({});
   const [post, setPost] = useState({});
 
-  return user === {} ||
-    post === {} ||
-    post === undefined ||
-    user === undefined ? (
-    'No Post'
-  ) : (
-    <DisplayPost user={user} post={post} />
-  );
-};
+  const hasPostAndUser = () => {
+    return (
+      user !== {} && post !== {} && post !== undefined && user !== undefined
+    );
+  };
 
-Post.propTypes = {
-  post: PropTypes.object.isRequired,
+  return hasPostAndUser() ? <DisplayPost user={user} post={post} /> : 'No Post';
 };
 
 const DisplayPost = props => {
   const { user, post } = props;
   return user && post ? (
     <div className={classes.displayPost}>
-      <DisplayPostMenu user={user} />
-      <ThePost post={post} />
-      <DisplayCommentLikes post={post} />
+      <PostMenu user={user} />
+      <PostContent post={post} />
+      <CommentLikes post={post} />
     </div>
   ) : (
     'Nothing to display'
   );
 };
 
-const ThePost = props => {
+const PostContent = props => {
   const { post } = props;
   return (
     post && (
@@ -57,7 +52,7 @@ const ThePost = props => {
   );
 };
 
-const DisplayCommentLikes = props => {
+const CommentLikes = props => {
   const { post } = props;
   return (
     post && (
@@ -65,24 +60,59 @@ const DisplayCommentLikes = props => {
         data-testid='like-comment-share-bar'
         className={classes.likeCommentShare}
       >
-        <div data-testid='likes-number'>
-          <i className={`far fa-thumbs-up ${classes.icon}`} />
-          <span>
-            {post.likes && post.likes.length > 0 && post.likes.length}
-          </span>
-        </div>
-        <div data-testid='comments-number'>
-          <i className={`far fa-comment-alt ${classes.icon}`} />
-          <span>
-            {post.comments && post.comments.length > 0 && post.comments.length}
-          </span>
-        </div>
-        <div data-testid='share'>
-          <i className={`fa fa-share ${classes.icon}`} />
-        </div>
+        <Likes post={post} />
+        <Comments post={post} />
+        <Share />
       </div>
     )
   );
+};
+
+const Likes = props => {
+  const { post } = props;
+  const hasLikes = () => {
+    return post.likes && post.likes.length > 0;
+  };
+  const numberOfLikes = () => post.likes.length;
+  return (
+    post && (
+      <div data-testid='likes-number'>
+        <i className={`far fa-thumbs-up ${classes.icon}`} />
+        <span>{hasLikes() && numberOfLikes()}</span>
+      </div>
+    )
+  );
+};
+
+const Comments = props => {
+  const { post } = props;
+
+  const hasComments = () => {
+    return post.comments && post.comments.length > 0;
+  };
+
+  const numberOfComments = () => post.comments.length;
+
+  return (
+    post && (
+      <div data-testid='comments-number'>
+        <i className={`far fa-comment-alt ${classes.icon}`} />
+        <span>{hasComments() && numberOfComments()}</span>
+      </div>
+    )
+  );
+};
+
+const Share = props => {
+  return (
+    <div data-testid='share'>
+      <i className={`fa fa-share ${classes.icon}`} />
+    </div>
+  );
+};
+
+Post.propTypes = {
+  post: PropTypes.object.isRequired,
 };
 
 export default Post;

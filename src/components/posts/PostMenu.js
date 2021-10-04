@@ -1,7 +1,7 @@
 import UserNamePicture from '../home-page/UserNamePicture';
-import classes from './DisplayPostMenu.module.css';
+import classes from './PostMenu.module.css';
 
-const DisplayPostMenu = props => {
+const PostMenu = props => {
   const { user } = props;
 
   return user !== {} && user !== undefined ? (
@@ -18,4 +18,4 @@ const DisplayPostMenu = props => {
   );
 };
 
-export default DisplayPostMenu;
+export default PostMenu;

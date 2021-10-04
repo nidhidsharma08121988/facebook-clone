@@ -177,6 +177,26 @@
       "comments": [],
       "likes": [],
       "id": "Akwr2Oy"
+    },
+    {
+      "user": "1",
+      "postId": 170,
+      "text": "This is my post",
+      "imageSrc": [],
+      "videoSrc": [],
+      "comments": [],
+      "likes": [],
+      "id": "cNlu2Vc"
+    },
+    {
+      "user": "1",
+      "postId": 29,
+      "text": "This is my post",
+      "imageSrc": [],
+      "videoSrc": [],
+      "comments": [],
+      "likes": [],
+      "id": "epiH9j1"
     }
   ]
 }
