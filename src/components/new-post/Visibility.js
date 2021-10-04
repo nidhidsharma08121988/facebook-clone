@@ -38,37 +38,44 @@ const Visibility = () => {
     setVisibility(item);
     setShowDropDown(false);
   };
+
+  const renderSelectedOption = () => (
+    <div className={classes.selectedOption} onClick={toggleDiv}>
+      <i className={visibility.icon} />
+      <span>
+        <strong>{visibilityType[visibility.id]}</strong>
+      </span>
+      <i className={showDropDown ? `fas fa-angle-up` : `fas fa-angle-down`}></i>
+    </div>
+  );
+
+  const renderVisibilityList = visibilityList.map((item, index) => (
+    <li
+      key={index}
+      className={classes.listItem}
+      onClick={() => itemClick(item)}
+    >
+      <i className={item.icon} />
+      <span>{visibilityType[item.id]}</span>
+    </li>
+  ));
+
+  const renderDropDown = () => (
+    <div className={`${showDropDown ? classes.show : classes.hide}`}>
+      <p>
+        <strong>Who can see your post?</strong>
+      </p>
+      <ul>{renderVisibilityList}</ul>
+    </div>
+  );
+
   return (
     <div
       className={classes.visibilityContainer}
       onMouseLeave={() => setShowDropDown(false)}
     >
-      <div className={classes.selectedOption} onClick={toggleDiv}>
-        <i className={visibility.icon} />
-        <span>
-          <strong>{visibilityType[visibility.id]}</strong>
-        </span>
-        <i
-          className={showDropDown ? `fas fa-angle-up` : `fas fa-angle-down`}
-        ></i>
-      </div>
-      <div className={`${showDropDown ? classes.show : classes.hide}`}>
-        <p>
-          <strong>Who can see your post?</strong>
-        </p>
-        <ul>
-          {visibilityList.map((item, index) => (
-            <li
-              key={index}
-              className={classes.listItem}
-              onClick={() => itemClick(item)}
-            >
-              <i className={item.icon} />
-              <span>{visibilityType[item.id]}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {renderSelectedOption()}
+      {renderDropDown()}
     </div>
   );
 };
