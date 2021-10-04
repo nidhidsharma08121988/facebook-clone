@@ -5,21 +5,25 @@ import Post from './Post';
 import classes from './Posts.module.css';
 
 const Posts = props => {
+  const hasPostsToDisplay = () => props.posts.length > 0;
+  const mapPostsAndDisplayPostComponent = () => {
+    return props.posts.map((post, index) => {
+      return (
+        <div
+          key={index}
+          className={classes.postContainer}
+          data-testid='post-container'
+        >
+          <Post post={post} />
+        </div>
+      );
+    });
+  };
   return (
     <div className={classes.allPosts} data-testid='posts-container'>
-      {props.posts.length > 0
-        ? props.posts.map((post, index) => {
-            return (
-              <div
-                key={index}
-                className={classes.postContainer}
-                data-testid='post-container'
-              >
-                <Post post={post} />
-              </div>
-            );
-          })
-        : 'No Posts'}
+      {hasPostsToDisplay()
+        ? mapPostsAndDisplayPostComponent()
+        : 'No Posts to diplay'}
     </div>
   );
 };
