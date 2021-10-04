@@ -15,34 +15,46 @@ const PostTextContainer = props => {
     //eslint-disable-next-line
   }, [text]);
 
-  return user ? (
+  const activeIcon = (
+    <i
+      className={`fas fa-location-arrow`}
+      onClick={addThePost}
+      data-testid='add-post-btn'
+    ></i>
+  );
+
+  const disabledIcon = (
+    <i
+      className={`fas fa-location-arrow`}
+      style={{ color: 'grey', disabled: 'true' }}
+      data-testid='add-post-btn'
+    ></i>
+  );
+
+  const renderTextArea = () => (
+    <div className={classes.textAreaContainer}>
+      <textarea
+        data-testid='input-post'
+        placeholder={`What's on your mind, ${user.userName && user.userName}?`}
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+    </div>
+  );
+
+  const renderPostIcon = () => (text ? activeIcon : disabledIcon);
+
+  const renderAddPost = () => (
     <div className={classes.postTextContainer}>
-      <div className={classes.textAreaContainer}>
-        <textarea
-          data-testid='input-post'
-          placeholder={`What's on your mind, ${
-            user.userName && user.userName
-          }?`}
-          value={text}
-          onChange={e => setText(e.target.value)}
-        />
-      </div>
+      {renderTextArea()}
       <div className={classes.postIcon} data-testid='submit-post'>
-        {text ? (
-          <i
-            className={`fas fa-location-arrow`}
-            onClick={addThePost}
-            data-testid='add-post-btn'
-          ></i>
-        ) : (
-          <i
-            className={`fas fa-location-arrow`}
-            style={{ color: 'grey' }}
-            data-testid='add-post-btn'
-          ></i>
-        )}
+        {renderPostIcon()}
       </div>
     </div>
+  );
+
+  return user ? (
+    renderAddPost()
   ) : (
     <div className={classes.postTextContainer}>Something went wrong</div>
   );
@@ -53,4 +65,5 @@ PostTextContainer.propTypes = {
   setPostText: PropTypes.func.isRequired,
   addPost: PropTypes.func.isRequired,
 };
+
 export default PostTextContainer;

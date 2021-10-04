@@ -36,7 +36,9 @@ const AddPost = props => {
     });
   };
 
-  const addPost = () => {
+  const newPostHasContent = newPost => newPost.text !== '' && newPost.text;
+
+  const publishPost = () => {
     try {
       const newPost = {
         ...myPost,
@@ -44,7 +46,7 @@ const AddPost = props => {
         postId: Math.floor(Math.random() * 1000),
       };
 
-      if (newPost.text !== '' && newPost.text) {
+      if (newPostHasContent(newPost)) {
         addPostAction(newPost);
         clearMyPost();
       }
@@ -68,7 +70,7 @@ const AddPost = props => {
       <PostTextContainer
         user={user}
         setPostText={setPostText}
-        addPost={addPost}
+        addPost={publishPost}
       />
       <div className={classes.addMoreToPostContainer}>
         <AddMoreToPost />
